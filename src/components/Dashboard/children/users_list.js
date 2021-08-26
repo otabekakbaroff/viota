@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react'
-import axiosWithAuth from '../components/axiosWithAuth'
+import { Link } from 'react-router-dom'
+import axiosWithAuth from '../../axiosWithAuth'
+import {BrowserRouter as Router,  Route,Switch } from 'react-router-dom'
+import Chatroom from './chatroom'
 
-
-function Dashboard(){
+function Users_list(){
     const [users, setUsers] = useState([])
     useEffect(()=>{
         axiosWithAuth().get('/api/users/all-users')
@@ -15,24 +17,26 @@ function Dashboard(){
         })
     },[])
 
-    const eventHandler = (e)=>{
-        console.log(e.id)
-        // props.history.push(`/dashboard${e.id}`);
-    }
+
 
     return(
         <div>
-            <h1>Dashboard</h1>
-            <div>
+            <Router>
+                <Switch>
+                    <Route path="/chatroom" component={Chatroom}/>
+                </Switch>
+            </Router>
                 {users.map(item=>(
-                    <div className="user" onClick={eventHandler} id = {item.id}>
+                    <Link to="/chatroom">
+                        <div className="user"  id = {item.id}>
                         <h1>{item.username}</h1>   
                         <h1>{item.id}</h1>
                     </div>
+                    </Link>
                 ))}
-            </div>
         </div>
     )
 }
 
-export default Dashboard
+
+export default Users_list
