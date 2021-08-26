@@ -19,6 +19,7 @@ function Users_list(){
 
 
 
+
     return(
         <div>
             <Router>
@@ -27,7 +28,7 @@ function Users_list(){
                 </Switch>
             </Router>
                 {users.map(item=>(
-                    <Link to="/chatroom">
+                    <Link to="/chatroom" onClick={localStorage.setItem('receiver-username', item.username)}>
                         <div className="user"  id = {item.id}>
                         <h1>{item.username}</h1>   
                         <h1>{item.id}</h1>

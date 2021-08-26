@@ -2,8 +2,9 @@ import React,{useState,useContext} from 'react'
 import { Context } from '../../Context';
 
 function Chatroom(){
-    const chatbox=useContext(Context).chatbox;
-    const set_chatbox=useContext(Context).set_chatbox;
+    const chatbox = useContext(Context).chatbox;
+    const socket = useContext(Context).socket;
+    const set_chatbox = useContext(Context).set_chatbox;
     const [message,set_message] = useState({
         message:''
     })
@@ -15,6 +16,14 @@ function Chatroom(){
     const submit = e =>{
         e.preventDefault()
         set_chatbox([...chatbox, message])
+        socket.emit('private-message', 
+        {
+            message:message.message,
+            from:localStorage.getItem('username'),
+            to:localStorage.getItem('receiver-username'),
+            socketId:socket.id
+        }
+        )
     }
     return(
         <div className="chat-room">

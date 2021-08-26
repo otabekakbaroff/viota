@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import axiosWithAuth from '../axiosWithAuth'
-
+import { Context } from '../Context';
 
 
 function Login(props) {
 
+  const socket = useContext(Context).socket;
 
   const [login,setLogin]=useState({
       username:'',
@@ -24,6 +25,7 @@ function Login(props) {
     axiosWithAuth().post('/api/users/login', login)
     .then(response=>{
           console.log(response)
+          socket.emit('login', login.username)
           localStorage.setItem('username',response.data.username)
           localStorage.setItem('token',response.data.token);
           props.history.push("/dashboard");
