@@ -38,7 +38,7 @@ function Login() {
 
                 <Button type="submit" className={classes.button}>Log In</Button>
 
-                <p  >Don't Have an account? Sign up <a href="http://localhost:3000/register">here</a></p>
+                <p  >Don't have an account? Sign up <a href="http://localhost:3000/register">here</a></p>
             </form>
     </div>
 
