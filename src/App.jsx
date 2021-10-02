@@ -8,7 +8,7 @@ function App() {
   const classes = useStyles()
 
   return (
-    <div className={classes.general} >
+    <div className={classes.general} id="container">
       <Router>
         <Switch>
           <Route exact path='/' component={Login}/>

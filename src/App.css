@@ -11,3 +11,11 @@ a{
 p{
     color:rgb(150,150,150);
 }
+
+@media (max-width: 1200px) and (max-height:600px) {
+    #container{
+        overflow: scroll;
+        height: fit-content;
+        padding: 50px;
+    }
+}
