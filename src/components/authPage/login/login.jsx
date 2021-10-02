@@ -38,7 +38,7 @@ function Login() {
 
                 <Button type="submit" className={classes.button}>Log In</Button>
 
-                <p  className='.descript'>Don't Have an account? Sign up <a href="http://localhost:3000/register">here</a></p>
+                <p  className='.descript'>Don't Have an account? Sign up <a href="https://viota.netlify.app/register">here</a></p>
             </form>
     </div>
 

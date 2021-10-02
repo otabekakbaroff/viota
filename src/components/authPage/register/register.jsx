@@ -39,7 +39,7 @@ function Register(props) {
 
                 <Button className={classes.button}type="submit">Sign up</Button>
 
-                <p  className='.descript'>Have an account? Login <a href="http://localhost:3000/">here</a></p>
+                <p  className='.descript'>Have an account? Login <a href="https://viota.netlify.app/">here</a></p>
             </form>
     </div>
 
