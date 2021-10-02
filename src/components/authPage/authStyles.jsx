@@ -7,7 +7,7 @@ const authStyles = makeStyles ((theme) => ({
     validation:{
         [theme.breakpoints.up('xs')]: {
             height:'500px',
-            width:'325px'
+            width:'350px'
         },
         [theme.breakpoints.up('sm')]: {
             height:'550px',
