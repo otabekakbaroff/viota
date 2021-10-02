@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './components/authPage/login/login.jsx';
 import Register from './components/authPage/register/register.jsx';
-import useStyles from './components/styles'
+import GeneralStyles from './components/generalStyles'
 import './App.css'
+import PrivateRoute from './components/PrivateRoute.jsx';
+import Dashboard from './components/dashboard/dashboard'
+
 
 function App() {
-  const classes = useStyles()
+  const classes = GeneralStyles()
 
   return (
     <div className={classes.general} id="container">
@@ -13,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Login}/>
           <Route path="/register" component={Register}/>
+          <PrivateRoute path="/dashboard" component={Dashboard}/>
         </Switch>
       </Router>
     </div>

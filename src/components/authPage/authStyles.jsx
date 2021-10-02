@@ -1,14 +1,7 @@
 import { makeStyles } from "@material-ui/core"
 
 
-const useStyles = makeStyles ((theme) => ({
-    general:{
-        backgroundColor:theme.palette.primary.dark,
-        height:'100vh',
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center'
-    },
+const authStyles = makeStyles ((theme) => ({
     // Login and Sign up
 
     validation:{
@@ -106,4 +99,4 @@ const useStyles = makeStyles ((theme) => ({
 }))
 
 
-export default useStyles
+export default authStyles

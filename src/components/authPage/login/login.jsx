@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "@material-ui/core";
-import useStyles from "../../styles";
+import authStyles from "../authStyles";
 
 
 
 function Login() {
 
-  const classes = useStyles()
+  const classes = authStyles()
 
   const [login,setLogin]=useState({
       username:'login',

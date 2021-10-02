@@ -1,11 +1,11 @@
 import { Button } from '@material-ui/core';
 import {useState} from 'react';
-import useStyles from "../../styles";
+import authStyles from "../authStyles";
 
 
 
-function Register(props) {
-  const classes = useStyles()
+function Register() {
+  const classes = authStyles()
 
 
 
