@@ -12,42 +12,64 @@ const useStyles = makeStyles ((theme) => ({
     // Login and Sign up
 
     validation:{
-        [theme.breakpoints.down('xs')]: {
-            height:'475px',
-            width:'300px',
+        [theme.breakpoints.up('xs')]: {
+            height:'500px',
+            width:'325px'
         },
-        [theme.breakpoints.down('sm')]: {
-            height:'560px',
-            width:'375px'
+        [theme.breakpoints.up('sm')]: {
+            height:'550px',
+            width:'400px'
+        },
+        [theme.breakpoints.up('md')]: {
+            height:'600px',
+            width:'450px'
+        },
+        [theme.breakpoints.up('lg')]: {
+            height:'650px',
+            width:'500px'
+        },
+        [theme.breakpoints.up('xl')]: {
+            height:'675px',
+            width:'525px'
         },
         backgroundColor:theme.palette.primary.main,
         boxShadow:`0px 0px 50px 2px black`,
         color:'white',
         display:'flex',
         alignItems:'center',
-        height:'650px',
-        width:'425px',
         flexDirection:'column',
         justifyContent:'center',
         borderRadius:'10px'
     },
 
     avatar:{
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.up('xs')]: {
+            height:'125px',
+            width:'125px'
+        },
+        [theme.breakpoints.up('sm')]: {
             height:'150px',
-            width:'150px',
-            marginBottom:'15px'
+            width:'150px'
         },
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.up('md')]: {
             height:'175px',
-            width:'175px',
-            marginBottom:'15px'
+            width:'175px'
         },
-        width:'200px',
-        height:'200px'
-        
+        [theme.breakpoints.up('lg')]: {
+            height:'200px',
+            width:'200px'
+        },
+        [theme.breakpoints.up('xl')]: {
+            height:'225px',
+            width:'225px'
+            
+        },
+        marginBottom:'15px' 
     },
-
+    discription:{
+        marginTop:'15px',
+        marginBottom:'15px'
+    },
     form:{
         display:'flex',
         flexDirection:'column',

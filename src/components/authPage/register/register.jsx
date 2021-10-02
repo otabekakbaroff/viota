@@ -29,8 +29,8 @@ function Register(props) {
   return (
     <div  className={classes.validation}>
             <img className={classes.avatar} src={`https://avatars.dicebear.com/api/bottts/${register.username}.svg`} alt="user's avatar"/>
-            <h2 className={classes.form.black}>Welcome</h2>
-            <p className='.descript'>Sign up</p>
+            <h2 >Welcome</h2>
+            <p className={classes.discription}>Sign up</p>
             <form onSubmit={registerSubmit} className={classes.form}>
 
                 <input  className={classes.item} placeholder=" Username" name="username" type="text" onChange={handleChange} id="username"/>
@@ -39,7 +39,7 @@ function Register(props) {
 
                 <Button className={classes.button}type="submit">Sign up</Button>
 
-                <p  className='.descript'>Have an account? Login <a href="https://viota.netlify.app/">here</a></p>
+                <p  >Have an account? Login <a href="http://localhost:3000/">here</a></p>
             </form>
     </div>
 

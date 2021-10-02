@@ -29,7 +29,7 @@ function Login() {
     <div className={classes.validation}>
             <img className={classes.avatar}  src={`https://avatars.dicebear.com/api/bottts/${login.username}.svg`} alt="user's avatar"/>
             <h2 >Welcome back</h2>
-            <p  className='.descript'>Login</p>
+            <p className={classes.discription}>Login</p>
             <form onSubmit={LoginSubmit} className={classes.form}>
 
                 <input  className={classes.item} placeholder=" Username" name="username" type="text" onChange={handleChange} id="username"/>
@@ -38,7 +38,7 @@ function Login() {
 
                 <Button type="submit" className={classes.button}>Log In</Button>
 
-                <p  className='.descript'>Don't Have an account? Sign up <a href="https://viota.netlify.app/register">here</a></p>
+                <p  >Don't Have an account? Sign up <a href="http://localhost:3000/register">here</a></p>
             </form>
     </div>
 
