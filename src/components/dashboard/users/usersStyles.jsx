@@ -19,14 +19,13 @@ const usersStyles = makeStyles ((theme) => ({
     profile_leftContainer:{
         display:'flex',
         alignItems:'center',
-        justifyContent:'space-between',
         width:'60%',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        marginLeft:'15px'
     },
     profile_img:{
         height:'75px',
         width:'75px',
-        // backgroundColor: theme.palette.secondary.main,
         borderRadius:'50px',
         padding:'5px',
         margin:'5px'
@@ -65,17 +64,20 @@ const usersStyles = makeStyles ((theme) => ({
     // Contacts 
 
     contacts:{
-        height:'80%'
+        height:'80%',
     },
     contacts_avatar:{
         display:'flex',
         alignItems:'center',
-        
+        borderBottom:'solid 1px #31363a',
+        height:'100px'
     },
     contacts_avatar_img:{
-        width:'100px',
-        height:'100px',
-        borderRadius:'50px'
+        width:'75px',
+        height:'75px',
+        borderRadius:'50px',
+        marginRight:'15px',
+        marginLeft:'15px'
     }
 }))
 
