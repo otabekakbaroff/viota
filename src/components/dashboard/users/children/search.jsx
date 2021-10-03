@@ -1,5 +1,5 @@
 import usersStyles from "../usersStyles"
-import SearchIcon from '@material-ui/icons/Search';
+
 function Search(){
     const users_classes = usersStyles()
     return(

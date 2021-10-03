@@ -69,7 +69,8 @@ const usersStyles = makeStyles ((theme) => ({
     },
     contacts_avatar:{
         display:'flex',
-        alignItems:'center'
+        alignItems:'center',
+        
     },
     contacts_avatar_img:{
         width:'100px',
