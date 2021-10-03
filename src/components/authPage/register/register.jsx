@@ -5,7 +5,7 @@ import authStyles from "../authStyles";
 
 
 function Register() {
-  const classes = authStyles()
+  const auth_classes = authStyles()
 
 
 
@@ -27,22 +27,23 @@ function Register() {
   }
 
   return (
-    <div  className={classes.validation}>
-            <img className={classes.avatar} src={`https://avatars.dicebear.com/api/bottts/${register.username}.svg`} alt="user's avatar"/>
-            <h2 >Welcome</h2>
-            <p className={classes.discription}>Sign up</p>
-            <form onSubmit={registerSubmit} className={classes.form}>
+    <div className={auth_classes.general} id="registerContainer">
+        <div  className={auth_classes.validation}>
+                <img className={auth_classes.avatar} src={`https://avatars.dicebear.com/api/bottts/${register.username}.svg`} alt="user's avatar"/>
+                <h2 >Welcome</h2>
+                <p className={auth_classes.discription}>Sign up</p>
+                <form onSubmit={registerSubmit} className={auth_classes.form}>
 
-                <input  className={classes.item} placeholder=" Username" name="username" type="text" onChange={handleChange} id="username"/>
+                    <input  className={auth_classes.item} placeholder=" Username" name="username" type="text" onChange={handleChange} id="username"/>
 
-                <input className={classes.item} placeholder=" Password" name="password" type="password" onChange={handleChange} id="password"/>
+                    <input className={auth_classes.item} placeholder=" Password" name="password" type="password" onChange={handleChange} id="password"/>
 
-                <Button className={classes.button}type="submit">Sign up</Button>
+                    <Button className={auth_classes.button}type="submit">Sign up</Button>
 
-                <p  >Have an account? Login <a href="http://localhost:3000/">here</a></p>
-            </form>
+                    <p  >Have an account? Login <a href="http://localhost:3000/">here</a></p>
+                </form>
+        </div>
     </div>
-
             
   );
 }

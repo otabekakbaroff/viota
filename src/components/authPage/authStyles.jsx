@@ -3,7 +3,14 @@ import { makeStyles } from "@material-ui/core"
 
 const authStyles = makeStyles ((theme) => ({
     // Login and Sign up
-
+    general:{
+            backgroundColor:theme.palette.primary.dark,
+            height:'100vh',
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center',
+            color:'white'
+    },     
     validation:{
         [theme.breakpoints.up('xs')]: {
             height:'500px',
