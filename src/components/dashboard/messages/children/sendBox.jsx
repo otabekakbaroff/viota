@@ -7,11 +7,12 @@ import MicIcon from '@material-ui/icons/Mic';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import msgStyles from '../messagesStyles'
 
 
 function SendBox(){
-    
     const [text,setText] = useState('') 
+    const msg_classes = msgStyles()
 
     const handleChange = (e) =>{
         setText(e.target.value)
@@ -22,31 +23,38 @@ function SendBox(){
     }
 
     return (
-        <div className="send-box">
+        <div className={msg_classes.sendBox}>
 
                 <IconButton >
                     <PhotoCameraIcon />
                 </IconButton>
 
-                <TextField onChange={handleChange}fullWidth  id="text" className="textareawidth" label="Type here..." variant="outlined" name="message" 
-                InputProps={{
-                    endAdornment: (        
-                    <InputAdornment>
-                        <IconButton  >
-                            <MicIcon />
-                        </IconButton>
-                        <IconButton >
-                            <PhotoLibraryIcon />
-                         </IconButton>
-                        <IconButton >
-                            <EmojiEmotionsIcon />
-                        </IconButton>
-                    </InputAdornment>
-                )}}/>
+                <TextField 
+                    onChange={handleChange} 
+                    fullWidth  
+                    id="text" 
+                    className={msg_classes.sendBox_input} 
+                    placeholder="Type here..." 
+                    variant="outlined" 
+                    name="message" 
+                    InputProps={{
+                        endAdornment: (        
+                        <InputAdornment>
+                            <IconButton  >
+                                <MicIcon className={msg_classes.sendBox_icons} />
+                            </IconButton>
+                            <IconButton >
+                                <PhotoLibraryIcon className={msg_classes.sendBox_icons}/>
+                            </IconButton>
+                            <IconButton >
+                                <EmojiEmotionsIcon className={msg_classes.sendBox_icons} />
+                            </IconButton>
+                        </InputAdornment>)}}
+                />
 
                 <div className="send-button-box">
                     <IconButton type="Submit" id="send-button" onClick = {Submit}>
-                        <SendIcon type="Submit"  id="send-icon"/>
+                        <SendIcon className={msg_classes.sendBox_icons} type="Submit"  id="send-icon"/>
                     </IconButton>
                 </div>
                 

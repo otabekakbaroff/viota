@@ -65,6 +65,7 @@ const usersStyles = makeStyles ((theme) => ({
 
     contacts:{
         height:'80%',
+        overflow:'scroll'
     },
     contacts_avatar:{
         display:'flex',
