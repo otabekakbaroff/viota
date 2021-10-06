@@ -3,8 +3,13 @@ import { makeStyles } from "@material-ui/core"
 
 const usersStyles = makeStyles ((theme) => ({
     main:{
+        [theme.breakpoints.up('xs')]: {
+            width:'100px',
+        },
+        [theme.breakpoints.up('md')]: {
+            width:'500px',
+        },
         backgroundColor:theme.palette.primary.main,
-        width:'35%',
         borderRight:`solid ${theme.palette.primary.dark} 1.5px`,
         display:'flex',
         flexDirection:'column'
@@ -58,7 +63,7 @@ const usersStyles = makeStyles ((theme) => ({
     search_input:{
         backgroundColor: 'inherit',
         height:'75px',
-        width:'95%',
+        width:'97%',
         outline:'none',
         color:'white',
         fontSize:'16px'
@@ -82,6 +87,14 @@ const usersStyles = makeStyles ((theme) => ({
         borderRadius:'50px',
         marginRight:'15px',
         marginLeft:'15px'
+    },
+    contacts_avatar_username:{
+        [theme.breakpoints.up('sm')]: {
+            display:'none'
+        },
+        [theme.breakpoints.up('md')]: {
+            display:'block'
+        }
     }
 }))
 

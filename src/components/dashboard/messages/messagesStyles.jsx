@@ -4,9 +4,14 @@ import { makeStyles } from "@material-ui/core"
 const msgStyles = makeStyles ((theme) => ({
     main:{
         backgroundColor:theme.palette.primary.dark,
-        width:'65%',
         display:'flex',
-        flexDirection:'column'
+        flexDirection:'column',
+        [theme.breakpoints.up('xs')]: {
+            flexGrow:1
+        },
+        [theme.breakpoints.up('md')]: {
+            width:'65%',
+        }
     },
     header:{
         display:'flex',
@@ -37,27 +42,49 @@ const msgStyles = makeStyles ((theme) => ({
         padding:'20px 0px 20px 0px'
     },
     chatBox_sent:{
+        [theme.breakpoints.up('xs')]: {
+            maxWidth:'200px',
+        },
+        [theme.breakpoints.up('sm')]: {
+            maxWidth:'250px',
+        },
+        [theme.breakpoints.up('md')]: {
+            maxWidth:'300px',
+        },
+        [theme.breakpoints.up('lg')]: {
+            maxWidth:'400px',
+        },
         backgroundColor:'#0f59ff',
         borderRadius:'25px',
-        maxWidth:'500px',
         alignSelf:'end',
         fontSize:'17px',
         color:'white',
         padding:'5px 25px',
         wordWrap: 'break-word',
-        margin:'0px 10px 0px 0px'
+        margin:'7.5px 10px 7.5px 0px'
 
     },
     chatBox_received:{
+        [theme.breakpoints.up('xs')]: {
+            maxWidth:'200px',
+        },
+        [theme.breakpoints.up('sm')]: {
+            maxWidth:'250px',
+        },
+        [theme.breakpoints.up('md')]: {
+            maxWidth:'300px',
+        },
+        [theme.breakpoints.up('lg')]: {
+            maxWidth:'400px',
+        },
         backgroundColor:'#444444',
         borderRadius:'25px',
-        maxWidth:'500px',
         fontSize:'17px',  
         color:'white',
         padding:'5px 25px',
         alignSelf:'start',
         wordWrap: 'break-word',
-        margin:'0px 0px 0px 10px'
+        margin:'7.5px 0px 7.5px 10px'
     },
 
 

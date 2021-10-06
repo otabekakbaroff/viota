@@ -8,61 +8,85 @@ function Contacts(){
                     <img className={users_classes.contacts_avatar_img}   
                     src={`https://avatars.dicebear.com/api/bottts/Joseph.svg`} 
                     alt="user's avatar"/>
-                    <h3>Joseph</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Joseph</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img  className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/David.svg`} 
                     alt="user's avatar"/>
-                    <h3>David</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>David</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Kevin.svg`} 
                     alt="user's avatar"/>
-                    <h3>Kevin</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Kevin</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Mike.svg`} 
                     alt="user's avatar"/>
-                    <h3>Mike</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Mike</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Jakie.svg`} 
                     alt="user's avatar"/>
-                    <h3>Jakie</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Jakie</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Benzon.svg`} 
                     alt="user's avatar"/>
-                    <h3>Benzon</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Benzon</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Karel.svg`} 
                     alt="user's avatar"/>
-                    <h3>Karel</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Karel</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Vlad.svg`} 
                     alt="user's avatar"/>
-                    <h3>Kevin</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Kevin</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Kariba.svg`} 
                     alt="user's avatar"/>
-                    <h3>Kevin</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Kevin</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Joe.svg`} 
                     alt="user's avatar"/>
-                    <h3>Joe</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Joe</h3>
+                </div>
+                <div className={users_classes.contacts_avatar}>
+                    <img className={users_classes.contacts_avatar_img}  
+                    src={`https://avatars.dicebear.com/api/bottts/Kailie.svg`} 
+                    alt="user's avatar"/>
+                    <h3 className={users_classes.contacts_avatar_username}>Kailie</h3>
+                </div>
+                <div className={users_classes.contacts_avatar}>
+                    <img className={users_classes.contacts_avatar_img}  
+                    src={`https://avatars.dicebear.com/api/bottts/Tao.svg`} 
+                    alt="user's avatar"/>
+                    <h3 className={users_classes.contacts_avatar_username}>Tao</h3>
+                </div>
+                <div className={users_classes.contacts_avatar}>
+                    <img className={users_classes.contacts_avatar_img}  
+                    src={`https://avatars.dicebear.com/api/bottts/Roger.svg`} 
+                    alt="user's avatar"/>
+                    <h3 className={users_classes.contacts_avatar_username}>Roger</h3>
+                </div>
+                <div className={users_classes.contacts_avatar}>
+                    <img className={users_classes.contacts_avatar_img}  
+                    src={`https://avatars.dicebear.com/api/bottts/Gendalf.svg`} 
+                    alt="user's avatar"/>
+                    <h3 className={users_classes.contacts_avatar_username}>Gendalf</h3>
                 </div>
            </div>
     )
