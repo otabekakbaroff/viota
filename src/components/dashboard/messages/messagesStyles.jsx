@@ -8,7 +8,6 @@ const msgStyles = makeStyles ((theme) => ({
         display:'flex',
         flexDirection:'column'
     },
-
     header:{
         display:'flex',
         height: '150px',
@@ -26,38 +25,69 @@ const msgStyles = makeStyles ((theme) => ({
         height:'75px',
         width:'75px'
     },
+
+
+
     chatBox:{
         flexGrow:'1',
         overflow:'scroll',
         borderBottom:`solid 2px ${theme.palette.primary.light}`,
         display:'flex',
-        flexDirection:'column'
+        flexDirection:'column',
+        padding:'20px 0px 20px 0px'
     },
     chatBox_sent:{
-        backgroundColor:'red',
-        borderRadius:'50px',
-        width:'150px',
-        alignSelf:'end'
+        backgroundColor:'#0f59ff',
+        borderRadius:'25px',
+        maxWidth:'500px',
+        alignSelf:'end',
+        fontSize:'17px',
+        color:'white',
+        padding:'5px 25px',
+        wordWrap: 'break-word',
+        margin:'0px 10px 0px 0px'
+
     },
     chatBox_received:{
-        backgroundColor:'blue',
-        borderRadius:'50px',
-        width:'150px'
+        backgroundColor:'#444444',
+        borderRadius:'25px',
+        maxWidth:'500px',
+        fontSize:'17px',  
+        color:'white',
+        padding:'5px 25px',
+        alignSelf:'start',
+        wordWrap: 'break-word',
+        margin:'0px 0px 0px 10px'
     },
+
+
+
+
+
 
 
     sendBox:{
-        height:'120px',
+        // height:'fit-content',
         display:'flex',
         alignItems:'center',
+        justifyContent:'center',
         backgroundColor:'rgb(49 54 60)'
     },
 
     sendBox_input:{
         backgroundColor:'white',
         borderRadius:'10px',
-        height: '75%',
+        margin: '15px 0px 15px 0px',
+        height: '60px',
+        '&:hover':{
+            backgroundColor:'#f1f1f1',
+        }
+    },
+    sendBox_input_icons:{
+        color:'#5d6164'
     }
+
+
 
 }))
 

@@ -32,29 +32,30 @@ function SendBox(){
                 <TextField 
                     onChange={handleChange} 
                     fullWidth  
-                    id="text" 
-                    className={msg_classes.sendBox_input} 
+                    id="text"  
                     placeholder="Type here..." 
                     variant="outlined" 
                     name="message" 
                     InputProps={{
+                        className: msg_classes.sendBox_input,
                         endAdornment: (        
                         <InputAdornment>
                             <IconButton  >
-                                <MicIcon className={msg_classes.sendBox_icons} />
+                                <MicIcon className={msg_classes.sendBox_input_icons} />
                             </IconButton>
                             <IconButton >
-                                <PhotoLibraryIcon className={msg_classes.sendBox_icons}/>
+                                <PhotoLibraryIcon className={msg_classes.sendBox_input_icons}/>
                             </IconButton>
                             <IconButton >
-                                <EmojiEmotionsIcon className={msg_classes.sendBox_icons} />
+                                <EmojiEmotionsIcon className={msg_classes.sendBox_input_icons} />
                             </IconButton>
-                        </InputAdornment>)}}
+                        </InputAdornment>)
+                        }}
                 />
 
                 <div className="send-button-box">
                     <IconButton type="Submit" id="send-button" onClick = {Submit}>
-                        <SendIcon className={msg_classes.sendBox_icons} type="Submit"  id="send-icon"/>
+                        <SendIcon  type="Submit"  id="send-icon"/>
                     </IconButton>
                 </div>
                 

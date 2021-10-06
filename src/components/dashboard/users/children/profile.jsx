@@ -12,9 +12,8 @@ function Profile(){
            <div className={users_classes.profile}>
                 <div className={users_classes.profile_leftContainer}>
                     <img className={users_classes.profile_img} 
-                     style={{backgroundColor:`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`}}  
                     src={`https://avatars.dicebear.com/api/bottts/${localStorage.getItem('username')}.svg`} alt="your profile avatar"/>
-                    <h3>{localStorage.getItem('username')}</h3>
+                    <h2>{localStorage.getItem('username')}</h2>
                 </div>
                 <div className={users_classes.profile_actions}>
                     <IconButton >

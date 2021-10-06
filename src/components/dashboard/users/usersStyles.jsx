@@ -5,13 +5,15 @@ const usersStyles = makeStyles ((theme) => ({
     main:{
         backgroundColor:theme.palette.primary.main,
         width:'35%',
-        borderRight:`solid ${theme.palette.primary.dark} 1.5px`
+        borderRight:`solid ${theme.palette.primary.dark} 1.5px`,
+        display:'flex',
+        flexDirection:'column'
     },
 
     // Profile
 
     profile:{
-        height:'12%',
+        height:'125px',
         display:'flex',
         alignItems:'center',
         justifyContent:'space-between'
@@ -24,9 +26,8 @@ const usersStyles = makeStyles ((theme) => ({
         marginLeft:'15px'
     },
     profile_img:{
-        height:'75px',
-        width:'75px',
-        borderRadius:'50px',
+        height:'100px',
+        width:'100px',
         padding:'5px',
         margin:'5px'
     },
@@ -41,7 +42,7 @@ const usersStyles = makeStyles ((theme) => ({
     // Search
 
     search:{
-        height:'7%',
+        height:'80px',
         '&::placeholder':{
             color:'rgb(150,150,150)',
             paddingLeft:'5px'
@@ -58,13 +59,15 @@ const usersStyles = makeStyles ((theme) => ({
         height:'100%',
         width:'100%',
         outline:'none',
-        color:'white'
+        color:'white',
+        paddingLeft:'15px',
+        fontSize:'16px'
     },
 
     // Contacts 
 
     contacts:{
-        height:'80%',
+        flexGrow:'1',
         overflow:'scroll'
     },
     contacts_avatar:{

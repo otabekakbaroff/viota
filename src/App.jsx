@@ -8,13 +8,25 @@ import './App.css'
 
 
 function App() {
+
+  //All unknown routes will redirect to login page which is located at "/" path
+  const checkPathLocation = () =>{
+    const all_paths = new Set(['/','/register','/dashboard'])
+    if(all_paths.has(window.location.pathname)){
+      return `/${Math.random()*99}`
+    }else{
+      return window.location.pathname
+    }
+  }
+
+
   return (
       <Router>
         <Switch>
           <Route>
             <AuthPage/>
-            <PrivateRoute path="/dashboard" component={Dashboard}/>
-            <Route  component={Login}/> {/* This should be error route (404) not found component */}
+            <PrivateRoute strict path="/dashboard" component={Dashboard}/>
+            <Route path={checkPathLocation()} component={Login}/> {/* This should be error route (404) not found component */}
           </Route>
         </Switch>
       </Router>

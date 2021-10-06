@@ -16,166 +16,182 @@ function ChatBox(){
     return(
         <div className={msg_classes.chatBox}>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man, what is new
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Just a diffent conversation
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Some random text here that is very long, seems like a good conversation but its nothing but stupid text
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               what if you had two golden pair of gloves that could turn anything into gold and you can only use it if you can wear them forever, would you do it?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               the future is unknown thats why you go by your guts and make sure you live your life the way you want to
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+           rteiotjbowerijtbiowertbjwierpotbjiowerjtbowierjtbpoiwerjtboiwerjtboijwerjgbjkdfhgblwehgbw
+               helkjbsnlkdfjghbuisehbgiwuerhgbjewhiuiwoerjtpwoeirtoweirjtobkewpoktbpwokebtpowekbtpowkepbotkw
+               ktbpowektbpowektbpowektpbowketpobkweptbow
+               wetbpowektbpowetpbowektbpowe
+               tbweklpotkbwepotkbwepoktbwpeoktbpowektbpowkeptobkwepotbkwepoktbwpoektbwpoekbtwpoektbwe
+               btwkepotbkwepoktbpweoktbpowektbpowektbpokwepotbkweptbkpwoekbtpowekbptowkebpotkwe
+               rteiotjbowerijtbiowertbjwierpotbjiowerjtbowierjtbpoiwerjtboiwerjtboijwerjgbjkdfhgblwehgbw
+               helkjbsnlkdfjghbuisehbgiwuerhgbjewhiuiwoerjtpwoeirtoweirjtobkewpoktbpwokebtpowekbtpowkepbotkw
+               ktbpowektbpowektbpowektpbowketpobkweptbow
+               wetbpowektbpowetpbowektbpowe
+               tbweklpotkbwepotkbwepoktbwpeoktbpowektbpowkeptobkwepotbkwepoktbwpoektbwpoekbtwpoektbwe
+               btwkepotbkwepoktbpweoktbpowektbpowektbpokwepotbkweptbkpwoekbtpowekbptowkebpotkwe
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+              Bla bla bla bla bla 
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Chikalika whatever jajajajajja bla bla
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               DA EMPTY ONE FOUNDs
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               rteiotjbowerijtbiowertbjwierpotbjiowerjtbowierjtbpoiwerjtboiwerjtboijwerjgbjkdfhgblwehgbw
+               helkjbsnlkdfjghbuisehbgiwuerhgbjewhiuiwoerjtpwoeirtoweirjtobkewpoktbpwokebtpowekbtpowkepbotkw
+               ktbpowektbpowektbpowektpbowketpobkweptbow
+               wetbpowektbpowetpbowektbpowe
+               tbweklpotkbwepotkbwepoktbwpeoktbpowektbpowkeptobkwepotbkwepoktbwpoektbwpoekbtwpoektbwe
+               btwkepotbkwepoktbpweoktbpowektbpowektbpokwepotbkweptbkpwoekbtpowekbptowkebpotkwe
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
-               <h4>Hello Man</h4>
+               Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               <h4>Hey, whats up?! How you been?</h4>
+               Hey, whats up?! How you been?
            </div>
         </div>
     )
