@@ -13,7 +13,7 @@ const usersStyles = makeStyles ((theme) => ({
     // Profile
 
     profile:{
-        height:'125px',
+        height:'115px',
         display:'flex',
         alignItems:'center',
         justifyContent:'space-between'
@@ -42,7 +42,6 @@ const usersStyles = makeStyles ((theme) => ({
     // Search
 
     search:{
-        height:'80px',
         '&::placeholder':{
             color:'rgb(150,150,150)',
             paddingLeft:'5px'
@@ -51,16 +50,17 @@ const usersStyles = makeStyles ((theme) => ({
         color: 'white',
         width:'100%',
         borderTop:`solid 1px ${theme.palette.primary.light}`,
-        borderBottom :`solid 1px ${theme.palette.primary.light}`
+        borderBottom :`solid 1px ${theme.palette.primary.light}`,
+        display:'flex',
+        justifyContent:'center'
     },
 
     search_input:{
         backgroundColor: 'inherit',
-        height:'100%',
-        width:'100%',
+        height:'75px',
+        width:'95%',
         outline:'none',
         color:'white',
-        paddingLeft:'15px',
         fontSize:'16px'
     },
 
