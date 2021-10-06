@@ -11,8 +11,8 @@ function Search(){
         fullWidth 
         placeholder="Search of users..." 
         variant="outlined" 
+        focused
         InputProps={{
-            disableOutline: true, 
             className:users_classes.search_input,
             endAdornment: (
             <InputAdornment  >

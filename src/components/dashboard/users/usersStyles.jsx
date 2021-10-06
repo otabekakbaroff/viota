@@ -61,22 +61,18 @@ const usersStyles = makeStyles ((theme) => ({
     },
 
     search_input:{
-        backgroundColor: 'inherit',
-        height:'75px',
+        backgroundColor: theme.palette.primary.light,
+        borderRadius:'10px',
+        height:'70px',
         width:'97%',
-        outline:'none',
         color:'white',
         fontSize:'16px',
         display:'flex',
         alignItems:'center',
         margin: '15px 0px 15px 0px',
-        outline:'red',
-        // '&:hover':{
-        //     backgroundColor:'purple',
-        // }
         '& .MuiInputBase-input':{
-            fontSize: 16,
-        }
+            fontSize: 18,
+        },
         
     },
 
