@@ -8,13 +8,14 @@ import './App.css'
 
 
 function App() {
-
+  console.log(window.history)
   //All unknown routes will redirect to login page which is located at "/" path
   const checkPathLocation = () =>{
     const all_paths = new Set(['/','/register','/dashboard'])
     if(all_paths.has(window.location.pathname)){
       return `/${Math.random()*99}`
     }else{
+      window.history.back()
       return window.location.pathname
     }
   }

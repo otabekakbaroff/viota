@@ -22,6 +22,7 @@ function Login() {
 
   const LoginSubmit=e=>{
     e.preventDefault()
+    localStorage.setItem('token','agwkriwakgoirk')
     console.log(login)
   }
 
