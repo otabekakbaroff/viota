@@ -3,10 +3,10 @@ import { Button } from "@material-ui/core";
 import authStyles from "../authStyles";
 
 
-
 function Login() {
 
   const auth_classes = authStyles()
+
 
   const [login,setLogin]=useState({
       username:'login',
@@ -22,7 +22,7 @@ function Login() {
 
   const LoginSubmit=e=>{
     e.preventDefault()
-    localStorage.setItem('token','agwkriwakgoirk')
+    localStorage.setItem('token', login.username)
     console.log(login)
   }
 

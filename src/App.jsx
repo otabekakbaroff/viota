@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch,Route } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute.jsx';
+// import PrivateRoute from './components/PrivateRoute.jsx';
 import Dashboard from './components/dashboard/dashboard'
 import AuthPage from './components/authPage/authPage';
 import Login from './components/authPage/login/login.jsx';
@@ -26,7 +26,8 @@ function App() {
         <Switch>
           <Route>
             <AuthPage/>
-            <PrivateRoute strict path="/dashboard" component={Dashboard}/>
+            {/* <PrivateRoute strict path="/dashboard" component={Dashboard}/> */}
+            <Route path="/dashboard" component={Dashboard}/>
             <Route path={checkPathLocation()} component={Login}/> {/* This should be error route (404) not found component */}
           </Route>
         </Switch>

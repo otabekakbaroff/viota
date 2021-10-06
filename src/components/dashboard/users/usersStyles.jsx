@@ -57,7 +57,7 @@ const usersStyles = makeStyles ((theme) => ({
         borderTop:`solid 1px ${theme.palette.primary.light}`,
         borderBottom :`solid 1px ${theme.palette.primary.light}`,
         display:'flex',
-        justifyContent:'center'
+        alignItems:'center'
     },
 
     search_input:{
@@ -66,7 +66,18 @@ const usersStyles = makeStyles ((theme) => ({
         width:'97%',
         outline:'none',
         color:'white',
-        fontSize:'16px'
+        fontSize:'16px',
+        display:'flex',
+        alignItems:'center',
+        margin: '15px 0px 15px 0px',
+        outline:'red',
+        // '&:hover':{
+        //     backgroundColor:'purple',
+        // }
+        '& .MuiInputBase-input':{
+            fontSize: 16,
+        }
+        
     },
 
     // Contacts 
