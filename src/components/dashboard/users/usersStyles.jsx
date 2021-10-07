@@ -47,9 +47,16 @@ const usersStyles = makeStyles ((theme) => ({
     // Search
 
     search:{
-        '&::placeholder':{
-            color:'rgb(150,150,150)',
-            paddingLeft:'5px'
+        [theme.breakpoints.up('xs')]: {
+            '&::placeholder':{
+                content:"www"
+            },
+        },
+        [theme.breakpoints.up('md')]: {
+            '&::placeholder':{
+                color:'rgb(150,150,150)',
+                paddingLeft:'5px'
+            },
         },
         backgroundColor: theme.palette.primary.main,
         color: 'white',
