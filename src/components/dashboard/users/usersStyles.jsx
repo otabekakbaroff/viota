@@ -69,11 +69,13 @@ const usersStyles = makeStyles ((theme) => ({
         fontSize:'16px',
         display:'flex',
         alignItems:'center',
+        '&:hover':{
+            backgroundColor:'#3a3f42'
+        },
         margin: '15px 0px 15px 0px',
         '& .MuiInputBase-input':{
             fontSize: 18,
         },
-        
     },
 
     // Contacts 
@@ -96,7 +98,7 @@ const usersStyles = makeStyles ((theme) => ({
         marginLeft:'15px'
     },
     contacts_avatar_username:{
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('xs')]: {
             display:'none'
         },
         [theme.breakpoints.up('md')]: {
