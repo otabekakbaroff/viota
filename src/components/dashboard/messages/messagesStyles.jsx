@@ -54,6 +54,9 @@ const msgStyles = makeStyles ((theme) => ({
         [theme.breakpoints.up('lg')]: {
             maxWidth:'400px',
         },
+        [theme.breakpoints.up('xl')]: {
+            maxWidth:'600px',
+        },
         backgroundColor:'#0f59ff',
         borderRadius:'25px',
         alignSelf:'end',
@@ -76,6 +79,9 @@ const msgStyles = makeStyles ((theme) => ({
         },
         [theme.breakpoints.up('lg')]: {
             maxWidth:'400px',
+        },
+        [theme.breakpoints.up('xl')]: {
+            maxWidth:'500px',
         },
         backgroundColor:'#444444',
         borderRadius:'25px',

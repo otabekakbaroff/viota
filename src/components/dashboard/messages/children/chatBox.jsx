@@ -120,7 +120,7 @@ function ChatBox(){
                Hello Man
            </div>
            <div className={msg_classes.chatBox_received}>
-               Hey, whats up?! How you been?
+               Hey, whats ups?! How you been?
            </div>
            <div className={msg_classes.chatBox_sent}>
                Hello Man
