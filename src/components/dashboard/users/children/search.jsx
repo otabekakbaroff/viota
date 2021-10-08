@@ -6,21 +6,23 @@ import SearchIcon from '@material-ui/icons/Search';
 function Search(){
     const users_classes = usersStyles()
     return(
-        <TextField 
-        className={users_classes.search} 
-        fullWidth 
-        placeholder="Search of users..." 
-        variant="outlined" 
-        focused
-        InputProps={{
-            className:users_classes.search_input,
-            endAdornment: (
-            <InputAdornment  >
-                <SearchIcon className={users_classes.search_icon}/>
-            </InputAdornment>
-            )
-        }} />
-
+        <div className={users_classes.search}>
+            <TextField 
+            className={users_classes.search_textField} 
+            fullWidth 
+            placeholder="Search of users..." 
+            variant="outlined" 
+            focused
+            InputProps={{
+                className:users_classes.search_input,
+                endAdornment: (
+                <InputAdornment  >
+                    <SearchIcon />
+                </InputAdornment>
+                )
+            }} />
+            <SearchIcon className={users_classes.search_icon}/>
+        </div>
     )
 }
 

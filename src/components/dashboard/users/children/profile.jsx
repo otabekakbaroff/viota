@@ -13,7 +13,7 @@ function Profile(){
                 <div className={users_classes.profile_leftContainer}>
                     <img className={users_classes.profile_img} 
                     src={`https://avatars.dicebear.com/api/bottts/${localStorage.getItem('username')}.svg`} alt="your profile avatar"/>
-                    <h2>{localStorage.getItem('username')}</h2>
+                    <h2 className={users_classes.profile_username}>{localStorage.getItem('username')}</h2>
                 </div>
                 <div className={users_classes.profile_actions}>
                     <IconButton >
