@@ -26,3 +26,27 @@ p{
         padding: 60px 10px 125px 10px;
     }
 }
+
+@media (max-width: 900px) {
+    #search{
+        display:'flex';
+        justify-content:'center';
+        align-items:'center';
+        flex-direction:'column';
+        background-color:#20262a;
+        border-top:'solid 1px #31363a';
+        border-bottom: 'solid 1px c'
+    }
+    #search_textField{
+        display:'none';
+    }
+    #search_icon{
+        color:'white';
+        width: '35px';
+        height:'35px';
+        background-color: #31363a;
+        padding:'1px 25px';
+        margin:'10px 10px';
+        border-radius:'5px';
+    }
+}
