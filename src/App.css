@@ -29,24 +29,24 @@ p{
 
 @media (max-width: 900px) {
     #search{
-        display:'flex';
-        justify-content:'center';
-        align-items:'center';
-        flex-direction:'column';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         background-color:#20262a;
-        border-top:'solid 1px #31363a';
-        border-bottom: 'solid 1px c'
+        border-top: solid 1px #31363a;
+        border-bottom:  solid 1px #31363a
     }
     #search_textField{
-        display:'none';
+        display: none;
     }
     #search_icon{
-        color:'white';
-        width: '35px';
-        height:'35px';
+        color: white;
+        width: 35px;
+        height: 35px;
         background-color: #31363a;
-        padding:'1px 25px';
-        margin:'10px 10px';
-        border-radius:'5px';
+        padding: 1px 25px;
+        margin: 10px 10px;
+        border-radius: 5px;
     }
 }
