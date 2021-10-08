@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 import authStyles from "../authStyles";
 
 
-function Login() {
+function Login(props) {
 
   const auth_classes = authStyles()
 
@@ -24,6 +24,7 @@ function Login() {
     e.preventDefault()
     localStorage.setItem('token', login.username)
     console.log(login)
+    props.history.push("/dashboard");
   }
 
   return (
