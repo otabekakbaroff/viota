@@ -50,13 +50,13 @@ function Contacts(){
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Vlad.svg`} 
                     alt="user's avatar"/>
-                    <h3 className={users_classes.contacts_avatar_username}>Kevin</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Vlad</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
                     src={`https://avatars.dicebear.com/api/bottts/Kariba.svg`} 
                     alt="user's avatar"/>
-                    <h3 className={users_classes.contacts_avatar_username}>Kevin</h3>
+                    <h3 className={users_classes.contacts_avatar_username}>Kariba</h3>
                 </div>
                 <div className={users_classes.contacts_avatar}>
                     <img className={users_classes.contacts_avatar_img}  
