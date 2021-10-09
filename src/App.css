@@ -27,7 +27,7 @@ p{
     }
 }
 
-@media (max-width: 900px){
+@media (min-width: 900px){
     #search_icon_desktop{
         display: none;
     }
