@@ -1,31 +1,36 @@
 import usersStyles from "../usersStyles"
-import InputAdornment from "@material-ui/core/InputAdornment";
-import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
-import FormControl from '@material-ui/core/FormControl'
+// import InputAdornment from "@material-ui/core/InputAdornment";
+// import TextField from '@material-ui/core/TextField';
+
 
 function Search(){
     const users_classes = usersStyles()
     return(
-        <FormControl className={users_classes.search} id="search" >
-            <TextField 
-            className={users_classes.search_textField}
-            id="search_textField" 
-            fullWidth 
-            placeholder="Search of users..." 
-            variant="outlined" 
-            focused
-            InputProps={{
-                className:users_classes.search_input,
-                id:"search_input",
-                endAdornment: (
-                <InputAdornment  >
-                    <SearchIcon />
-                </InputAdornment>
-                )
-            }} />
-            <SearchIcon className={users_classes.search_icon} id="search_icon" />
-        </FormControl>
+        // <div className={users_classes.search}>
+        //     <TextField 
+        //     className={users_classes.search_textField}
+        //     fullWidth 
+        //     placeholder="Search of users..." 
+        //     variant="outlined" 
+        //     focused
+        //     InputProps={{
+        //         className:users_classes.search_input,
+        //         endAdornment: (
+        //         <InputAdornment  >
+        //             <SearchIcon />
+        //         </InputAdornment>
+        //         )
+        //     }} />
+        //     <SearchIcon className={users_classes.search_icon} />
+        // </div>
+        <div className={users_classes.search}>
+            <div className={users_classes.search_textField}>
+                <input placeholder="Search for users..." className={users_classes.search_input}/>
+                <i><SearchIcon className={users_classes.search_icon_desktop} /></i>
+            </div>
+            <SearchIcon className={users_classes.search_icon_mobile} />
+        </div>
     )
 }
 

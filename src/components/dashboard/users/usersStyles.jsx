@@ -78,7 +78,15 @@ const usersStyles = makeStyles ((theme) => ({
             backgroundColor:theme.palette.primary.main,
             borderTop:`solid 1px ${theme.palette.primary.light}`,
             borderBottom :`solid 1px ${theme.palette.primary.light}`,
-        }
+            alignItems:'center'
+        },
+        display:'flex',
+        backgroundColor:theme.palette.primary.main,
+        justifyContent:'center',
+        borderTop:`solid 1px ${theme.palette.primary.light}`,
+        borderBottom :`solid 1px ${theme.palette.primary.light}`,
+        alignItems:'center',
+        padding:'15px 5px'
     },
 
     search_textField:{
@@ -88,37 +96,45 @@ const usersStyles = makeStyles ((theme) => ({
         [theme.breakpoints.up('md')]: {
             display:'flex',
         },
-        '&::placeholder':{
-            color:'rgb(150,150,150)',
-            paddingLeft:'5px'
-        },
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.primary.light,
         color: 'white',
-        width:'100%',
+        height:'75px',
+        width:'97%',
+        borderRadius:'10px',
         borderTop:`solid 1px ${theme.palette.primary.light}`,
         borderBottom :`solid 1px ${theme.palette.primary.light}`,
         alignItems:'center'
     },
 
     search_input:{
+        outline:'none',
+        '&::placeholder':{
+            color:'rgb(150,150,150)',
+            fontSize:'24px',
+            fontWeight:'50px',
+            paddingLeft:'5px'
+        },
         backgroundColor: theme.palette.primary.light,
         borderRadius:'10px',
         height:'70px',
         width:'97%',
         color:'white',
-        fontSize:'16px',
+        fontSize:'24px',
+        paddingLeft:'5px',
         display:'flex',
         alignItems:'center',
         '&:hover':{
             backgroundColor:'#3a3f42'
         },
         margin: '15px 0px 15px 0px',
-        '& .MuiInputBase-input':{
-            fontSize: 18,
-        },
     },
-
-    search_icon:{
+    search_icon_desktop:{
+        padding:'5px',
+        color:'white',
+        width: '35px',
+        height:'35px',
+    },
+    search_icon_mobile:{
         [theme.breakpoints.up('xs')]: {
             color:'white',
             width: '35px',
