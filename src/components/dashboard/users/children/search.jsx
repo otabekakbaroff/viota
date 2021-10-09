@@ -10,7 +10,7 @@ function Search(){
         <div className={users_classes.search}>
             <div className={users_classes.search_textField}>
                 <input placeholder="Search for users..." className={users_classes.search_input}/>
-                <i><SearchIcon className={users_classes.search_icon_desktop} /></i>
+                <i><SearchIcon id="search_icon_desktop" className={users_classes.search_icon_desktop}  /></i>
             </div>
             <SearchIcon className={users_classes.search_icon_mobile} id="search_icon_mobile"/>
         </div>
