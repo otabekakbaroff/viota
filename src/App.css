@@ -28,7 +28,7 @@ p{
 }
 
 @media (min-width: 900px){
-    #search_icon_desktop{
+    #search_icon_mobile{
         display: none;
     }
 } 
