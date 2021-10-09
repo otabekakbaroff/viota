@@ -73,7 +73,6 @@ const usersStyles = makeStyles ((theme) => ({
         [theme.breakpoints.down('md')]: {
             display:'flex',
             justifyContent:'center',
-            alignItems:'center',
             flexDirection:'column',
             backgroundColor:theme.palette.primary.main,
             borderTop:`solid 1px ${theme.palette.primary.light}`,
