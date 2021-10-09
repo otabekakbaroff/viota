@@ -15,6 +15,7 @@ const msgStyles = makeStyles ((theme) => ({
     },
     header:{
         position:'sticky',
+        top:0,
         display:'flex',
         height: '150px',
         borderBottom:`solid 1.5px ${theme.palette.primary.light}`,
@@ -102,6 +103,7 @@ const msgStyles = makeStyles ((theme) => ({
 
     sendBox:{
         position:'sticky',
+        bottom:0,
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
