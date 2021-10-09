@@ -26,3 +26,9 @@ p{
         padding: 60px 10px 125px 10px;
     }
 }
+
+@media (max-width: 900px){
+    #search_icon_mobile{
+        display: none;
+    }
+} 
