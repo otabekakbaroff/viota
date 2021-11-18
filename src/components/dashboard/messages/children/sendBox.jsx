@@ -8,22 +8,31 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import msgStyles from '../messagesStyles'
-
-
+import {sendMessage} from '../../../action'
+import {useDispatch} from 'react-redux'
 function SendBox(){
-    const [text,setText] = useState('') 
+    const [text,setText] = useState({text:'',date:'',sender:'',receiver:''}) 
     const msg_classes = msgStyles()
-
+    const dispatch = useDispatch()
+    const date = new Date();
     const handleChange = (e) =>{
-        setText(e.target.value)
+        setText({
+            ...text,
+            text:e.target.value
+        })
     }
 
     const Submit = () =>{
-        console.log(text)
+        dispatch(sendMessage({
+            ...text,
+            date:date.getTime(),
+            sender:'ME',
+            receiver:'YOU'
+        }))
     }
 
     return (
-        <div className={msg_classes.sendBox}>
+        <div className={msg_classes.sendBox} >
 
                 <IconButton >
                     <PhotoCameraIcon />

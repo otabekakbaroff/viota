@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch,Route } from 'react-router-dom';
 import Dashboard from './components/dashboard/dashboard'
 import AuthPage from './components/authPage/authPage';
 import Login from './components/authPage/login/login.jsx';
-import './App.css'
+import './App.css';
 
 
 
