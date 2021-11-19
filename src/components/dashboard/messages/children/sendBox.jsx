@@ -8,7 +8,7 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import msgStyles from '../messagesStyles'
-import {sendMessage} from '../../../action'
+import {sendMessage} from '../../../redux/action'
 import {useDispatch} from 'react-redux'
 function SendBox(){
     const [text,setText] = useState({text:'',date:'',sender:'',receiver:''}) 

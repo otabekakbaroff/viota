@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import {messageReducer} from '../reducers/sendMessage'
+import {messageReducer} from './sendMessage'
 
 const allReducers = combineReducers({
     msg:messageReducer,

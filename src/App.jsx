@@ -6,7 +6,6 @@ import Login from './components/authPage/login/login.jsx';
 import './App.css';
 
 
-
 function App() {
   //All unknown routes will redirect to login page which is located at "/" path
   const checkPathLocation = () =>{
@@ -18,7 +17,6 @@ function App() {
       return window.location.pathname
     }
   }
-
 
   return (
       <Router>

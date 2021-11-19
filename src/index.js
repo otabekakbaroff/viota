@@ -5,12 +5,14 @@ import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 import { theme } from "./components/theme"
 import { ThemeProvider } from '@material-ui/styles';
-import allReducers from './components/reducers'
-import {createStore} from 'redux'
+import allReducers from './components/redux/reducers'
+import {applyMiddleware, createStore} from 'redux'
 import { Provider } from 'react-redux'
+import logger from 'redux-logger'
+import thunk from "redux-thunk"
 
 
-const store = createStore(allReducers)
+const store = createStore(allReducers, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
   <Provider store = {store}>
