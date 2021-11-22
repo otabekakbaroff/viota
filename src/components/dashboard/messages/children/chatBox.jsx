@@ -1,12 +1,17 @@
 import msgStyles from '../messagesStyles'
-// import {useSelector} from 'react-redux'
+import { connect } from 'react-redux';
+import { getMyMessages } from '../../../redux/action';
+import { useEffect } from 'react';
 
-
-
-function ChatBox(){
+function ChatBox(props){
     const msg_classes = msgStyles()
-    // const msg = useSelector( state => state.msg )
 
+    const {selectedFriend, myMessages, getMyMessages} = props
+    console.log(selectedFriend, myMessages)
+    // const msg = useSelector( state => state.msg )
+    useEffect(()=>{
+        getMyMessages(selectedFriend)
+    },[getMyMessages])
     return(
         <div className={msg_classes.chatBox}>
            <div className={msg_classes.chatBox_sent} key={Math.random()*99999999}>
@@ -18,11 +23,18 @@ function ChatBox(){
            <div className={msg_classes.chatBox_received} key={Math.random()*99999999}>
                Hey, whats up?! How you been?
            </div>
-           {/* {msg.map(item=>(
-               <div className={msg_classes.chatBox_sent} key={Math.random()*99999999}>{item.text}</div>
-           ))} */}
+           {myMessages.map(item=>(
+               <div className={msg_classes.chatBox_sent} key={Math.random()*99999999}>{item.message}</div>
+           ))}
         </div>
     )
 }
 
-export default ChatBox;
+
+const mapStateToProps = state => {
+    return {
+        ...state
+    }
+}
+  
+  export default connect(mapStateToProps, {getMyMessages})(ChatBox);

@@ -14,7 +14,7 @@ export const loginUser = usersInfo => dispatch => {
 };
 
 
-export const registerUser = (usersInfo) => (dispatch) => {
+export const registerUser = usersInfo => dispatch => {
     axiosWithAuth().post(`/api/users/register`, usersInfo)
         .then(response => {
             console.log(response)
@@ -29,7 +29,7 @@ export const registerUser = (usersInfo) => (dispatch) => {
 };
 
 
-export const getFriendsList = () => (dispatch) => {
+export const getFriendsList = () => dispatch => {
     axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
         .then(response => {
             dispatch({ type: 'GET_FRIENDS_LIST', payload: response.data })
@@ -41,7 +41,7 @@ export const getFriendsList = () => (dispatch) => {
 
 
 
-export const friendsRequest = (usersInfo) => (dispatch) => {
+export const friendsRequest = usersInfo => dispatch => {
     axiosWithAuth().get(`/send_message`,usersInfo)
         .then(response => {
             dispatch({ type: 'FRIENDS_REQUEST', payload: response.data })
@@ -52,14 +52,14 @@ export const friendsRequest = (usersInfo) => (dispatch) => {
 };
 
 
-export const selectFriend = () => (dispatch)=>{
-    dispatch({type:'SELECT_FRIEND'})
+export const selectFriend = friend => dispatch=>{
+    dispatch({type:'SELECT_FRIEND', payload: friend})
 }
 
 
 
-export const getMyMessages = () => (dispatch, usersInfo) => {
-    axiosWithAuth().get(`/send_message`,usersInfo)
+export const getMyMessages = usersInfo => dispatch => {
+    axiosWithAuth().get(`/api/messages/my-messages`, {from:usersInfo.from, to:usersInfo.to})
         .then(response => {
             dispatch({ type: 'GET_MY_MESSAGES', payload: response.data })
         })

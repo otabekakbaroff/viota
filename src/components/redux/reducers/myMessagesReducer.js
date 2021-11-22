@@ -1,13 +1,16 @@
-const initialState = {
-    username:'',
-}
+const initialState = [{
+    message: "text",
+    from: "Otabek",
+    to: "Zikini",
+    date: 123124124
+}]
 
 
-export const selectedFriend = (
+export const myMessages = (
     state = initialState, action) => 
 {
     switch( action.type ){
-        case 'SELECT_FRIEND':
+        case 'GET_MY_MESSAGES':
             return  {
                 username:action.payload
             }

@@ -2,12 +2,13 @@ import usersStyles from "../usersStyles"
 import { connect } from 'react-redux';
 import { getFriendsList } from "../../../redux/action";
 import { useEffect } from "react";
-
+import {selectFriend} from '../../../redux/action'
 
 function Contacts(props){
-   const {friendsList, getFriendsList} = props
+   const {friendsList, getFriendsList, selectFriend} = props
    let array = []
    const handleClickEvent = (e) =>{
+        selectFriend(e.target.textContent)
         if(array.length>=1){
             let element = array.pop()
             element.style.backgroundColor = '#20262a'
@@ -51,4 +52,5 @@ const mapStateToProps = state => {
   
   export default connect(mapStateToProps, {
       getFriendsList,
+      selectFriend
     })(Contacts);
