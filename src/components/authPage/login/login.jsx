@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Button } from "@material-ui/core";
 import authStyles from "../authStyles";
+import { loginUser } from "../../redux/action";
+import { connect } from 'react-redux';
 
 
-function Login() {
+function Login(props) {
+
+  const {loginUser} = props
 
   const auth_classes = authStyles()
 
-
   const [login,setLogin]=useState({
       username:'login',
-      password:''
+      password:'',
   });
   
   const handleChange=e=>{
@@ -22,10 +25,8 @@ function Login() {
 
   const LoginSubmit=e=>{
     e.preventDefault()
-    localStorage.setItem('token', login.username)
-    console.log(login)
+    loginUser(login)
   }
-
   return (
     <div className={auth_classes.general} id="loginContainer">
       <div className={auth_classes.validation}>
@@ -49,4 +50,13 @@ function Login() {
   );
 }
 
-export default Login;
+
+const mapStateToProps = state => {
+  return {
+      username: state.username,
+      token: state.token,
+      chatted_last:state.chatted_last
+  }
+}
+
+export default connect(mapStateToProps, {loginUser})(Login);

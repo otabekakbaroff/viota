@@ -1,5 +1,16 @@
-export const messageReducer = (
-     state = [{text:'Hello',date:'1/12/12',sender:'otabek',receiver:'Viska'}], action) => 
+const initialState = [
+    {
+        text:'YO',
+        date:'1/12/12',
+        sender:'otabek',
+        receiver:'Viska'
+    }
+]
+
+
+
+export const messagesReducer = (
+    state=initialState, action) => 
 {
     switch( action.type ){
         case 'SEND_MESSAGE':

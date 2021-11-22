@@ -8,13 +8,16 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import msgStyles from '../messagesStyles'
-import {sendMessage} from '../../../redux/action'
-import {useDispatch} from 'react-redux'
+// import {sendMessage} from '../../../redux/action'
+// import {useDispatch} from 'react-redux'
 function SendBox(){
+
     const [text,setText] = useState({text:'',date:'',sender:'',receiver:''}) 
     const msg_classes = msgStyles()
-    const dispatch = useDispatch()
-    const date = new Date();
+    // const dispatch = useDispatch()
+    // const date = new Date();
+
+
     const handleChange = (e) =>{
         setText({
             ...text,
@@ -23,12 +26,12 @@ function SendBox(){
     }
 
     const Submit = () =>{
-        dispatch(sendMessage({
-            ...text,
-            date:date.getTime(),
-            sender:'ME',
-            receiver:'YOU'
-        }))
+        // dispatch(sendMessage({
+        //     ...text,
+        //     date:date.getTime(),
+        //     sender:'ME',
+        //     receiver:'YOU'
+        // }))
     }
 
     return (

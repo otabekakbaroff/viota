@@ -1,13 +1,13 @@
-import { Button } from '@material-ui/core';
-import {useState} from 'react';
+import { useState } from "react";
+import { Button } from "@material-ui/core";
 import authStyles from "../authStyles";
+import { registerUser } from "../../redux/action";
+import { connect } from "react-redux";
 
-
-
-function Register() {
+function Register(props) {
   const auth_classes = authStyles()
 
-
+  const {registerUser} = props
 
   const [register,setRegister]=useState({
       username:'register',
@@ -23,7 +23,7 @@ function Register() {
 
   const registerSubmit=e=>{
     e.preventDefault()
-    console.log(register)
+    registerUser(register)
   }
 
   return (
@@ -48,4 +48,13 @@ function Register() {
   );
 }
 
-export default Register;
+
+const mapStateToProps = state => {
+  return {
+      username: state.username,
+      token: state.token,
+      chatted_last:state.chatted_last
+  }
+}
+
+export default connect(mapStateToProps, {registerUser})(Register);

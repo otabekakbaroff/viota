@@ -5,9 +5,12 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import EditIcon from '@material-ui/icons/Edit';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import Badge from '@material-ui/core/Badge';
+import { connect } from 'react-redux';
+
 
 function Profile(){
     const users_classes = usersStyles()
+
     return(
            <div className={users_classes.profile}>
                 <div className={users_classes.profile_leftContainer}>
@@ -39,5 +42,12 @@ function Profile(){
 }
 
 
-
-export default Profile
+const mapStateToProps = state => {
+    return {
+        username: state.username,
+        token: state.token,
+        chatted_last:state.chatted_last
+    }
+  }
+  
+  export default connect(mapStateToProps, {})(Profile);
