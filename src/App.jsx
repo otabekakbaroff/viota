@@ -4,9 +4,17 @@ import Dashboard from './components/dashboard/dashboard'
 import AuthPage from './components/authPage/authPage';
 import Login from './components/authPage/login/login.jsx';
 import './App.css';
-
+import io from "socket.io-client"
+import { useEffect } from 'react';
+const socket = io("http://localhost:5000")
 
 function App() {
+  useEffect(()=>{
+    console.log("HIT")
+    socket.on("message", (data) => {
+      console.log(data); 
+    });
+  },[])
 
   return (
       <Router>

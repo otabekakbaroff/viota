@@ -1,9 +1,4 @@
-const initialState = [{
-    message: "text",
-    from: "Otabek",
-    to: "Zikini",
-    date: 123124124
-}]
+const initialState = []
 
 
 export const myMessages = (
@@ -11,9 +6,7 @@ export const myMessages = (
 {
     switch( action.type ){
         case 'GET_MY_MESSAGES':
-            return  {
-                username:action.payload
-            }
+            return  action.payload
         default:
             return state
     }

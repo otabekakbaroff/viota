@@ -15,7 +15,7 @@ function Header(props){
             <div className={msg_classes.header}>
                 <div className={msg_classes.header_avatar}>
                     <img className={msg_classes.header_avatar_img}  
-                    src={`https://avatars.dicebear.com/api/bottts/Joseph.svg`} alt="user's avatar"/>
+                    src={`https://avatars.dicebear.com/api/bottts/${selectedFriend.username}.svg`} alt="user's avatar"/>
                     <h3>{selectedFriend.username}</h3>
                 </div>
                 <div className={msg_classes.header_icons}>

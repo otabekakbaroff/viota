@@ -6,19 +6,9 @@ import {selectFriend} from '../../../redux/action'
 
 function Contacts(props){
    const {friendsList, getFriendsList, selectFriend} = props
-   let array = []
+
    const handleClickEvent = (e) =>{
         selectFriend(e.target.textContent)
-        if(array.length>=1){
-            let element = array.pop()
-            element.style.backgroundColor = '#20262a'
-            array.push(e.target)
-            array[0].style.backgroundColor="#2c3032"
-        }else{
-            array.push(e.target)
-            array[0].style.backgroundColor="#2c3032"
-        }
-        
    }
 
     useEffect(()=>{

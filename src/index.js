@@ -9,12 +9,11 @@ import allReducers from './components/redux/reducers'
 import {applyMiddleware, createStore} from 'redux'
 import { Provider } from 'react-redux'
 import thunk from "redux-thunk"
-import logger from 'redux-logger';
 // import { persistStore } from 'redux-persist';
 // import { PersistGate } from 'redux-persist/integration/react';
 
 
-const store = createStore(allReducers,applyMiddleware(thunk,logger))
+const store = createStore(allReducers,applyMiddleware(thunk))
 
 // const persistor = persistStore(store) 
 

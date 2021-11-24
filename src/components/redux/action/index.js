@@ -1,5 +1,7 @@
 import axiosWithAuth from '../../axiosWithAuth'
 
+
+
 export const loginUser = usersInfo => dispatch => {
     axiosWithAuth().post(`/api/users/login`, usersInfo)
         .then(response => {
@@ -17,7 +19,6 @@ export const loginUser = usersInfo => dispatch => {
 export const registerUser = usersInfo => dispatch => {
     axiosWithAuth().post(`/api/users/register`, usersInfo)
         .then(response => {
-            console.log(response)
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('username', response.data.username)
             dispatch({ type: 'REGISTER', payload: response.data })
@@ -27,6 +28,10 @@ export const registerUser = usersInfo => dispatch => {
             console.log(error)
         })
 };
+
+export const searchUser = (user) => dispatch =>{
+
+}
 
 
 export const getFriendsList = () => dispatch => {
@@ -40,7 +45,7 @@ export const getFriendsList = () => dispatch => {
 };
 
 
-
+// THIS IS NOT DONE
 export const friendsRequest = usersInfo => dispatch => {
     axiosWithAuth().get(`/send_message`,usersInfo)
         .then(response => {
@@ -59,7 +64,7 @@ export const selectFriend = friend => dispatch=>{
 
 
 export const getMyMessages = usersInfo => dispatch => {
-    axiosWithAuth().get(`/api/messages/my-messages`, {from:usersInfo.from, to:usersInfo.to})
+    axiosWithAuth().post(`/api/messages/my-messages`, {from:usersInfo.from, to:usersInfo.to})
         .then(response => {
             dispatch({ type: 'GET_MY_MESSAGES', payload: response.data })
         })
@@ -70,7 +75,7 @@ export const getMyMessages = usersInfo => dispatch => {
 
 
 export const sendMessage = () => (dispatch, usersInfo) => {
-    axiosWithAuth().get(`/send_message`,usersInfo)
+    axiosWithAuth().get(`/api/messages/send-message`,usersInfo)
         .then(response => {
             dispatch({ type: 'SEND_MESSAGE', payload: response.data })
         })
