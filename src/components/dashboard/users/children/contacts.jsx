@@ -1,7 +1,6 @@
 import usersStyles from "../usersStyles"
 import { connect } from 'react-redux';
-import { getFriendsList } from "../../../redux/action";
-import {selectFriend} from '../../../redux/action'
+import { getFriendsList, selectFriend } from "../../../redux/action";
 import { useEffect } from "react";
 
 function Contacts(props){

@@ -30,6 +30,7 @@ export const registerUser = usersInfo => dispatch => {
         })
 };
 
+
 export const getFriendsList = () => dispatch => {
     axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
         .then(response => {
@@ -78,6 +79,19 @@ export const getMyMessages = usersInfo => dispatch => {
     }
 };
 
+
+export const friendsRequest = usersInfo => dispatch => {
+    axiosWithAuth().post(`/api/connections/friend-requests`, {username:localStorage.getItem('username')})
+        .then(response => {
+            dispatch({ type: 'FRIENDS_REQUESTS', payload: response.data })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+};
+
+
+
 // ↓ NOT DONE ↓
 
 
@@ -91,13 +105,4 @@ export const sendMessage = () => (dispatch, usersInfo) => {
 
 
 
-export const friendsRequest = usersInfo => dispatch => {
-    axiosWithAuth().get(`/send_message`,usersInfo)
-        .then(response => {
-            dispatch({ type: 'FRIENDS_REQUEST', payload: response.data })
-        })
-        .catch(error => {
-            console.log(error)
-        })
-};
 

@@ -64,9 +64,39 @@ const usersStyles = makeStyles ((theme) => ({
         display:'flex',
         justifyContent: 'flex-end'
     },
-
-
-
+    profile_modal_notifications:{
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        overflow:"scroll",
+        height:'90%',
+        color:'red',
+        margin:'15px 0px'
+    },
+    profile_modal_notifications_userBox:{
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        width:'100%',
+        margin:'15px 0px 15px 0px'
+    },
+    profile_modal_notifications_profile:{
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'space-between'
+    },
+    profile_modal_notifications_img:{
+        width: '75px',
+        height:'75px'
+    },
+    profile_modal_notifications_accept_button:{
+        backgroundColor:'#0068ad',
+        marginRight:'10px'
+    },
+    profile_modal_notifications_decline_button:{
+        backgroundColor:'#fd2b2b',
+    },
     // Search
 
     search:{

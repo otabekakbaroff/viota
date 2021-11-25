@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage'
 import { friendsList } from './friendsListReducer'
 import { selectedFriend } from './selectFriendReducer'
 import { myMessages } from './myMessagesReducer'
-
+import {friendsRequestList} from './friendRequestReducer'
 
 const persistConfig = {
     key:'root',
@@ -20,7 +20,8 @@ const allReducers = combineReducers({
     authUser,
     friendsList,
     selectedFriend,
-    myMessages
+    myMessages,
+    friendsRequestList
 })
 
 

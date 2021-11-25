@@ -1,5 +1,5 @@
 const initialState = {
-    username:'',
+    username:'SELECT A FRIEND TO CHAT :)',
 }
 
 
