@@ -79,5 +79,3 @@ function SendBox(){
 export default SendBox;
 
 
-
-

@@ -1,8 +1,8 @@
 import usersStyles from "../usersStyles"
 import { connect } from 'react-redux';
 import { getFriendsList } from "../../../redux/action";
-import { useEffect } from "react";
 import {selectFriend} from '../../../redux/action'
+import { useEffect } from "react";
 
 function Contacts(props){
    const {friendsList, getFriendsList, selectFriend} = props
