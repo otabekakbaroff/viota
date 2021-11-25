@@ -7,11 +7,10 @@ import { friendsList } from './friendsListReducer'
 import { selectedFriend } from './selectFriendReducer'
 import { myMessages } from './myMessagesReducer'
 
-
 const persistConfig = {
     key:'root',
     storage,
-    whitelist:[authUser,messagesReducer,friendsList,selectedFriend]
+    whitelist:[authUser,messagesReducer,friendsList,selectedFriend,myMessages]
 }
 
 
@@ -20,7 +19,7 @@ const allReducers = combineReducers({
     authUser,
     friendsList,
     selectedFriend,
-    myMessages
+    myMessages,
 })
 
 
