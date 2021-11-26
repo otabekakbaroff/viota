@@ -80,7 +80,7 @@ export const getMyMessages = usersInfo => dispatch => {
 };
 
 
-export const friendsRequest = usersInfo => dispatch => {
+export const friendsRequest = () => dispatch => {
     axiosWithAuth().post(`/api/connections/friend-requests`, {username:localStorage.getItem('username')})
         .then(response => {
             dispatch({ type: 'FRIENDS_REQUESTS', payload: response.data })
@@ -89,6 +89,22 @@ export const friendsRequest = usersInfo => dispatch => {
             console.log(error)
         })
 };
+
+
+export const acceptRequest = requestInfo => dispatch=>{
+    // axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
+    //     .then(response => {
+    //         dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username:requestInfo.to} })
+    //         dispatch({ type: 'UPDATE_REQUEST_LIST', payload:{username: requestInfo.to} })
+    //     })
+    //     .catch(error => {
+    //         console.log(error)
+    // })  
+    console.log(requestInfo)
+    dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username:requestInfo.to} }) 
+    // dispatch({ type: 'UPDATE_REQUEST_LIST', payload:{username: requestInfo.to} })
+}
+
 
 
 

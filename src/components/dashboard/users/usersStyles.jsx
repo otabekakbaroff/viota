@@ -70,7 +70,7 @@ const usersStyles = makeStyles ((theme) => ({
         alignItems:'center',
         overflow:"scroll",
         height:'90%',
-        color:'red',
+        // color:'red',
         margin:'15px 0px'
     },
     profile_modal_notifications_userBox:{

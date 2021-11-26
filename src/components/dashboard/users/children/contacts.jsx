@@ -25,7 +25,6 @@ function Contacts(props){
                             <h3 className={users_classes.contacts_avatar_username}>{item.username}</h3>
                       </div>
                 ))}
-
            </div>
     )
 }

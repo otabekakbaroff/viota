@@ -3,7 +3,7 @@ import { Typography, Fade, Modal, Box, Backdrop, Badge, IconButton, Button  } fr
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import usersStyles from "../../usersStyles"
 import { connect } from 'react-redux';
-import {friendsRequest} from "../../../../redux/action"
+import {friendsRequest, acceptRequest} from "../../../../redux/action"
 
 
 const style = {
@@ -25,7 +25,7 @@ function Notifications(props) {
   const handleClose = () => setOpen(false);
   const users_classes = usersStyles()
 
-  const {friendsRequest, friendsRequestList} = props
+  const {acceptRequest,friendsRequest, friendsRequestList} = props
 
   useState(()=>{
     friendsRequest()
@@ -58,13 +58,13 @@ function Notifications(props) {
             </Typography>
             <div  className={users_classes.profile_modal_notifications}>               
                 {friendsRequestList.map(item=>(
-                     <div className={users_classes.profile_modal_notifications_userBox}>
+                     <div className={users_classes.profile_modal_notifications_userBox} key={Math.random()*999999999}>
                      <div className={users_classes.profile_modal_notifications_profile}>
                          <img className={users_classes.profile_modal_notifications_img} src={`https://avatars.dicebear.com/api/bottts/${item.from}.svg`} alt="John robot emoji"/>
                          <h3>{item.from}</h3>
                      </div>
                      <div className={users_classes.profile_modal_notifications_buttons}>
-                         <Button className={users_classes.profile_modal_notifications_accept_button} color="red" variant="contained">Accept</Button>
+                         <Button  className={users_classes.profile_modal_notifications_accept_button} variant="contained">Accept</Button>
                          <Button className={users_classes.profile_modal_notifications_decline_button} variant="outlined">Decline</Button>
                      </div>
                     </div>
@@ -87,4 +87,5 @@ const mapStateToProps = state => {
   
   export default connect(mapStateToProps, {
     friendsRequest,
+    acceptRequest
     })(Notifications);
