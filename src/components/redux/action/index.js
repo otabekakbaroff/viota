@@ -1,6 +1,6 @@
 import axiosWithAuth from '../../axiosWithAuth'
 import io from "socket.io-client"
-const socket = io("http://localhost:5000",{autoConnect: true})
+export const socket = io("http://localhost:5000",{autoConnect: true})
 
 
 export const loginUser = usersInfo => dispatch => {
@@ -92,32 +92,61 @@ export const friendsRequest = () => dispatch => {
 
 
 export const acceptRequest = requestInfo => dispatch=>{
-    // axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
-    //     .then(response => {
-    //         dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username:requestInfo.to} })
-    //         dispatch({ type: 'UPDATE_REQUEST_LIST', payload:{username: requestInfo.to} })
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    // })  
-    console.log(requestInfo)
-    dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username:requestInfo.to} }) 
-    // dispatch({ type: 'UPDATE_REQUEST_LIST', payload:{username: requestInfo.to} })
+    axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+    })  
+    console.log(requestInfo.to)
+    dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username: requestInfo.to} }) 
+    dispatch({ type: 'UPDATE_REQUEST_LIST', payload: {username: requestInfo.to} })
+}
+
+export const declineRequest = requestInfo => dispatch=>{
+    axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+    })  
+    console.log(requestInfo.to)
+    dispatch({ type: 'UPDATE_REQUEST_LIST', payload: {username: requestInfo.to} })
 }
 
 
+export const sendMessage = msg => dispatch => {
+    socket.emit('private-message', msg)
+    dispatch({type:'SEND_MESSAGE', payload: msg})
+};
+
+
+
+
+export const receiverMessage = msg => dispatch =>{
+    console.log(msg)
+    dispatch({type:'RECEIVE_MESSAGE', payload: msg})
+}
 
 
 // ↓ NOT DONE ↓
 
 
-export const sendMessage = () => (dispatch, usersInfo) => {
-    // socket.emit('user-search', user)
-    socket.on('private-message', data=>{
-        dispatch({type:'SEND_MESSAGE', payload: data})
-       
-    })
-};
+
+
+
+
+export const sendRequest = () => dispatch => {
+
+}
+
+
+export const cancelRequest = () => dispatch => {
+
+}
+
 
 
 

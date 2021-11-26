@@ -9,9 +9,9 @@ export const friendsRequestList = (
             return  action.payload
         case 'UPDATE_REQUEST_LIST':
             console.log(action.payload)
-            // let newState = [...state].filter(item=> item.username !== `${action.payload.username}`)
-            // return newState
-            break;
+            let newState = [...state].filter(item=> item.from !== `${action.payload.username}`)
+            console.log(newState)
+            return  newState
         default:
             return state
     }

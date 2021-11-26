@@ -8,30 +8,34 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import msgStyles from '../messagesStyles'
-// import {sendMessage} from '../../../redux/action'
-// import {useDispatch} from 'react-redux'
-function SendBox(){
+import { connect } from 'react-redux';
+import {sendMessage} from '../../../redux/action'
 
-    const [text,setText] = useState({text:'',date:'',sender:'',receiver:''}) 
+
+function SendBox(props){
+
+    const [text,setText] = useState({message:'', date:'', from:'', to:''}) 
     const msg_classes = msgStyles()
-    // const dispatch = useDispatch()
-    // const date = new Date();
 
+    const {selectedFriend,sendMessage} = props
+    const d = new Date();
 
     const handleChange = (e) =>{
         setText({
             ...text,
-            text:e.target.value
+            message:e.target.value
         })
     }
 
-    const Submit = () =>{
-        // dispatch(sendMessage({
-        //     ...text,
-        //     date:date.getTime(),
-        //     sender:'ME',
-        //     receiver:'YOU'
-        // }))
+    const Submit = (e) =>{
+        e.preventDefault()
+        sendMessage({
+            ...text,
+            from:localStorage.getItem('username'),
+            to: selectedFriend.username,
+            date: d.getTime()
+        })
+        document.querySelector('#chatBox').scrollTo({top:document.querySelector('#chatBox').scrollHeight+9999, behavior:'smooth'})
     }
 
     return (
@@ -76,6 +80,13 @@ function SendBox(){
 }
 
 
-export default SendBox;
+const mapStateToProps = state => {
+    return {
+        ...state
+    }
+}
+export default connect(mapStateToProps, {
+    sendMessage,
+  })(SendBox);
 
 
