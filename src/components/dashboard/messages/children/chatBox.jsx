@@ -9,25 +9,33 @@ function ChatBox(props){
     const {selectedFriend, myMessages, getMyMessages, receiverMessage} = props
 
     useEffect(()=>{
-        socket.emit('user-info', localStorage.getItem('username'))
+        getMyMessages({from:selectedFriend.username, to:localStorage.getItem('username')})
+    },[selectedFriend,getMyMessages])
+    useEffect(()=>{
+        socket.on('private-message', data=>{
+            receiverMessage(data)
+        })
+    },[receiverMessage])
+    useEffect(()=>{
         socket.on('confirm', data=>{
             console.log(data)
         })
-        socket.on('private-message', data=>{
-            console.log(data)
-            receiverMessage(data)
-            document.querySelector('#chatBox').scrollTo({top:document.querySelector('#chatBox').scrollHeight, behavior:'smooth'})
-        })
-        getMyMessages({from:selectedFriend.username, to:localStorage.getItem('username')})
-        document.querySelector('#chatBox').scrollTo({top:document.querySelector('#chatBox').scrollHeight, behavior:'smooth'})
-    },[selectedFriend,getMyMessages,receiverMessage])
+        socket.emit('user-info', localStorage.getItem('username'))
+    },[])
+    
     return(
-        <div className={msg_classes.chatBox} id='chatBox'>
+        <div className={msg_classes.chatBox} id='chatBox'> 
            {myMessages.map(item=>(
                <div 
+               style={{display:(
+                   (localStorage.getItem('username') === item.to && selectedFriend.username === item.from) ||
+               (localStorage.getItem('username') === item.from && selectedFriend.username === item.to)
+               ) ? 'block': 'none' }}
                className={
                item.from === selectedFriend.username ? msg_classes.chatBox_received:msg_classes.chatBox_sent} 
-               key={Math.random()*99999999}>{item.message}</div>
+               key={Math.random()*99999999}>
+                   {item.message}
+                </div>
            ))}
         </div>
     )

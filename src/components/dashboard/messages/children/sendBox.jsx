@@ -35,7 +35,6 @@ function SendBox(props){
             to: selectedFriend.username,
             date: d.getTime()
         })
-        document.querySelector('#chatBox').scrollTo({top:document.querySelector('#chatBox').scrollHeight+9999, behavior:'smooth'})
     }
 
     return (

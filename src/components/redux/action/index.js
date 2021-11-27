@@ -1,6 +1,11 @@
 import axiosWithAuth from '../../axiosWithAuth'
 import io from "socket.io-client"
+
+
+
+
 export const socket = io("http://localhost:5000",{autoConnect: true})
+
 
 
 export const loginUser = usersInfo => dispatch => {
@@ -124,21 +129,17 @@ export const sendMessage = msg => dispatch => {
 
 
 
-
 export const receiverMessage = msg => dispatch =>{
-    console.log(msg)
     dispatch({type:'RECEIVE_MESSAGE', payload: msg})
 }
+
+
 
 
 // ↓ NOT DONE ↓
 
 
-
-
-
-
-export const sendRequest = () => dispatch => {
+export const sendRequest = (requestInfo) => dispatch => {
 
 }
 
