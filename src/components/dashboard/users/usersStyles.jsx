@@ -97,6 +97,8 @@ const usersStyles = makeStyles ((theme) => ({
     profile_modal_notifications_decline_button:{
         backgroundColor:'#fd2b2b',
     },
+
+   
     // Search
 
     search:{
@@ -194,6 +196,7 @@ const usersStyles = makeStyles ((theme) => ({
         display:'flex',
         alignItems:'center',
         borderBottom:'solid 1px #31363a',
+        justifyContent:'space-around', 
         height:'100px'
     },
 
@@ -212,6 +215,9 @@ const usersStyles = makeStyles ((theme) => ({
         [theme.breakpoints.up('md')]: {
             display:'block'
         }
+    },
+    contacts_add_friend_button:{
+        backgroundColor:'#0068ad',
     }
 }))
 
