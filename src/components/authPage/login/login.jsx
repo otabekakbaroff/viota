@@ -41,7 +41,7 @@ function Login(props) {
 
                   <Button type="submit" className={auth_classes.button}>Log In</Button>
 
-                  <p  >Don't have an account? Sign up <a href="http://localhost:3000/register">here</a></p>
+                  <p  >Don't have an account? Sign up <a href="/register">here</a></p>
               </form>
       </div>
     </div>

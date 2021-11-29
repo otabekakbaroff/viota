@@ -40,7 +40,7 @@ function Register(props) {
 
                     <Button className={auth_classes.button}type="submit">Sign up</Button>
 
-                    <p  >Have an account? Login <a href="http://localhost:3000/">here</a></p>
+                    <p  >Have an account? Login <a href="/">here</a></p>
                 </form>
         </div>
     </div>
