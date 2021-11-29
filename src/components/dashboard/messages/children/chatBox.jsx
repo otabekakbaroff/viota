@@ -30,7 +30,7 @@ function ChatBox(props){
                style={{display:(
                    (localStorage.getItem('username') === item.to && selectedFriend.username === item.from) ||
                (localStorage.getItem('username') === item.from && selectedFriend.username === item.to)
-               ) ? 'block': 'none' }}
+               ) ? true: false }}
                className={
                item.from === selectedFriend.username ? msg_classes.chatBox_received:msg_classes.chatBox_sent} 
                key={Math.random()*99999999}>

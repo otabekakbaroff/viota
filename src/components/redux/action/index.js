@@ -46,11 +46,22 @@ export const getFriendsList = () => dispatch => {
         })
 };
 
+export const friendsListSet = () => dispatch => {
+    axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
+        .then(response => {
+            dispatch({ type: 'ALL_FRIENDS', payload: response.data })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+};
+
+
 export const searchUser = (user) => dispatch =>{
     socket.emit('user-search', user)
     socket.on('user-search', data=>{
         if(data !== 'error'){
-            dispatch({type:'GET_FRIENDS_LIST', payload: data})
+            dispatch({type:'SEARCH_USER', payload: data})
         }else{
             axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
             .then(response => {
@@ -62,6 +73,7 @@ export const searchUser = (user) => dispatch =>{
         }
     })
 }
+
 
 
 export const selectFriend = friend => dispatch=>{
@@ -108,6 +120,7 @@ export const acceptRequest = requestInfo => dispatch=>{
     dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username: requestInfo.to} }) 
     dispatch({ type: 'UPDATE_REQUEST_LIST', payload: {username: requestInfo.to} })
 }
+
 
 export const declineRequest = requestInfo => dispatch=>{
     axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
