@@ -9,6 +9,9 @@ export const friendsList = (
             return  action.payload
         case 'UPDATE_FRIENDS_LIST':
             return [...state, action.payload]
+        // case 'ADDED_FRIEND':
+        //     let newState = [...state].filter(item=> item.username !== `${action.payload}`)
+        //     return  newState
         default:
             return state
     }

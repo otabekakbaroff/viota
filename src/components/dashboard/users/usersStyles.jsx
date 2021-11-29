@@ -192,15 +192,18 @@ const usersStyles = makeStyles ((theme) => ({
         overflow:'scroll'
     },
 
-    contacts_avatar:{
+    contacts_profile:{
         display:'flex',
-        alignItems:'center',
         borderBottom:'solid 1px #31363a',
-        justifyContent:'space-around', 
+        justifyContent:'space-between', 
         height:'100px'
     },
-
-    contacts_avatar_img:{
+    contacts_profile_avatar:{
+        display:'flex',
+        alignItems:'center',
+        margin:'0px 20px'
+    },
+    contacts_profile_img:{
         width:'75px',
         height:'75px',
         borderRadius:'50px',
@@ -208,7 +211,7 @@ const usersStyles = makeStyles ((theme) => ({
         marginLeft:'15px'
     },
     
-    contacts_avatar_username:{
+    contacts_profile_username:{
         [theme.breakpoints.up('xs')]: {
             display:'none'
         },
@@ -217,7 +220,10 @@ const usersStyles = makeStyles ((theme) => ({
         }
     },
     contacts_add_friend_button:{
+        height: '50px',
         backgroundColor:'#0068ad',
+        alignSelf:'center',
+        margin:'0px 25px'
     }
 }))
 

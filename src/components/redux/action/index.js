@@ -61,7 +61,7 @@ export const searchUser = (user) => dispatch =>{
     socket.emit('user-search', user)
     socket.on('user-search', data=>{
         if(data !== 'error'){
-            dispatch({type:'SEARCH_USER', payload: data})
+            dispatch({type:'GET_FRIENDS_LIST', payload: data})
         }else{
             axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
             .then(response => {
@@ -116,8 +116,8 @@ export const acceptRequest = requestInfo => dispatch=>{
         .catch(error => {
             console.log(error)
     })  
-    console.log(requestInfo.to)
-    dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username: requestInfo.to} }) 
+    dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username: requestInfo.to} })
+    dispatch({ type: 'UPDATE_FRIEND_CHECK',  payload: {username: requestInfo.to}})
     dispatch({ type: 'UPDATE_REQUEST_LIST', payload: {username: requestInfo.to} })
 }
 
@@ -130,8 +130,7 @@ export const declineRequest = requestInfo => dispatch=>{
         .catch(error => {
             console.log(error)
     })  
-    console.log(requestInfo.to)
-    dispatch({ type: 'UPDATE_REQUEST_LIST', payload: {username: requestInfo.to} })
+    dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username: requestInfo.to} })
 }
 
 
@@ -148,13 +147,20 @@ export const receiverMessage = msg => dispatch =>{
 
 
 
+export const sendRequest = user => dispatch => {
+    axiosWithAuth().post(`/api/connections/send-friend-request`, {from:localStorage.getItem('username'),to:user})
+    .then(response => {
+        console.log(response)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+    dispatch({ type: 'UPDATE_FRIEND_CHECK', payload: user })  
+}
+
+
 
 // ↓ NOT DONE ↓
-
-
-export const sendRequest = (requestInfo) => dispatch => {
-
-}
 
 
 export const cancelRequest = () => dispatch => {
