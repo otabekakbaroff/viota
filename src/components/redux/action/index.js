@@ -4,7 +4,7 @@ import io from "socket.io-client"
 
 
 
-export const socket = io("https://viota-backend.herokuapp.com/",{autoConnect: true})
+export const socket = io('https://viota-backend.herokuapp.com',{autoConnect: true})
 
 
 
@@ -37,7 +37,7 @@ export const registerUser = usersInfo => dispatch => {
 
 
 export const getFriendsList = () => dispatch => {
-    axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
+    axiosWithAuth().get(`/api/connection/${localStorage.getItem('username')}/friends-list`)
         .then(response => {
             dispatch({ type: 'GET_FRIENDS_LIST', payload: response.data })
         })
@@ -47,7 +47,7 @@ export const getFriendsList = () => dispatch => {
 };
 
 export const friendsListSet = () => dispatch => {
-    axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
+    axiosWithAuth().get(`/api/connection/${localStorage.getItem('username')}/friends-list`)
         .then(response => {
             dispatch({ type: 'ALL_FRIENDS', payload: response.data })
         })
@@ -63,7 +63,7 @@ export const searchUser = (user) => dispatch =>{
         if(data !== 'error'){
             dispatch({type:'GET_FRIENDS_LIST', payload: data})
         }else{
-            axiosWithAuth().get(`/api/connections/${localStorage.getItem('username')}/friends-list`)
+            axiosWithAuth().get(`/api/connection/${localStorage.getItem('username')}/friends-list`)
             .then(response => {
                 dispatch({ type: 'GET_FRIENDS_LIST', payload: response.data })
             })
@@ -98,7 +98,7 @@ export const getMyMessages = usersInfo => dispatch => {
 
 
 export const friendsRequest = () => dispatch => {
-    axiosWithAuth().post(`/api/connections/friend-requests`, {username:localStorage.getItem('username')})
+    axiosWithAuth().post(`/api/connection/friend-requests`, {username:localStorage.getItem('username')})
         .then(response => {
             dispatch({ type: 'FRIENDS_REQUESTS', payload: response.data })
         })
@@ -109,7 +109,7 @@ export const friendsRequest = () => dispatch => {
 
 
 export const acceptRequest = requestInfo => dispatch=>{
-    axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
+    axiosWithAuth().put(`/api/connection/request-reply`, requestInfo)
         .then(response => {
             console.log(response)
         })
@@ -123,7 +123,7 @@ export const acceptRequest = requestInfo => dispatch=>{
 
 
 export const declineRequest = requestInfo => dispatch=>{
-    axiosWithAuth().put(`/api/connections/request-reply`, requestInfo)
+    axiosWithAuth().put(`/api/connection/request-reply`, requestInfo)
         .then(response => {
             console.log(response)
         })
@@ -148,7 +148,7 @@ export const receiverMessage = msg => dispatch =>{
 
 
 export const sendRequest = user => dispatch => {
-    axiosWithAuth().post(`/api/connections/send-friend-request`, {from:localStorage.getItem('username'),to:user})
+    axiosWithAuth().post(`/api/connection/send-friend-request`, {from:localStorage.getItem('username'),to:user})
     .then(response => {
         console.log(response)
     })
