@@ -20,11 +20,6 @@ function Contacts(props){
     },[friendsList,friendsRequestList])
 
 
-   const handleClickEvent = (e) =>{
-       console.log('handleClickEvent')
-        selectFriend(e.target.id)
-   }
-
     useEffect(()=>{
         console.log('getFriendsList-useEffect')
         getFriendsList()
@@ -32,15 +27,6 @@ function Contacts(props){
     
     const users_classes = usersStyles()
     
-    const handleAddFriend = (e) =>{
-        console.log('handleAddFriend')
-        sendRequest(e.target.id)
-    }
-    const handleAccept = (e) =>{
-        console.log('handleAccept')
-        acceptRequest({from:localStorage.getItem('username'),to:e.target.id,status:2})
-    }
-
     return(
            <div className={users_classes.contacts}>
                  {searchResult.length === 0 
@@ -49,8 +35,7 @@ function Contacts(props){
                      <div 
                         key={Math.random()*9999999999} 
                         className={users_classes.contacts_profile}
-                        id={item.username}
-                        onClick={handleClickEvent}>
+                        onClick={()=>{selectFriend(item.username)}}>
                             <div className={users_classes.contacts_profile_avatar} id={item.username}>
                                 <img className={users_classes.contacts_profile_img}  
                                 src={`https://avatars.dicebear.com/api/bottts/${item.username}.svg`} 
@@ -66,26 +51,22 @@ function Contacts(props){
                     <div 
                        key={Math.random()*9999999999} 
                        className={users_classes.contacts_profile}
-                       id={item.username}
-                       onClick={handleClickEvent}>
-                           <div className={users_classes.contacts_profile_avatar} id={item.username}>
+                       onClick={()=>{selectFriend(item.username)}}>
+                           <div className={users_classes.contacts_profile_avatar} >
                                <img className={users_classes.contacts_profile_img}  
                                src={`https://avatars.dicebear.com/api/bottts/${item.username}.svg`} 
                                alt="user's avatar"
-                               id={item.username}
                                />
-                               <h3 className={users_classes.contacts_profile_username} id={item.username}>{item.username}</h3>
+                               <h3 className={users_classes.contacts_profile_username} >{item.username}</h3>
                            </div>
                            <Button
                            style={{display: (friendListState.has(item.username)) || friendRequestState.has(item.username) ? 'none':'block'}}
-                           id={item.username}
                            className={users_classes.contacts_add_friend_button}
-                           onClick={handleAddFriend}>Add friend</Button>
+                           onClick={()=>{sendRequest(item.username)}}>Add friend</Button>
                             <Button
                            style={{display: (friendRequestState.has(item.username) ? 'block':'none')}}
-                           id={item.username}
                            className={users_classes.contacts_add_friend_button}
-                           onClick={handleAccept}>Accept</Button>
+                           onClick={()=>{acceptRequest({from:localStorage.getItem('username'),to:item.username,status:2})}}>Accept</Button>
                      </div>        
                ))
                 }
