@@ -2,11 +2,11 @@ import { combineReducers } from 'redux'
 import { authUser } from './authReducer'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { friendsList } from './friendsListReducer'
-import { selectedFriend } from './selectFriendReducer'
-import { myMessages } from './myMessagesReducer'
-import {friendsRequestList} from './friendRequestReducer'
-import {friendsListCheck} from './friendListCheck'
+import { friendsList } from './friendsList'
+import { selectedFriend } from './selectFriend'
+import { myMessages } from './myMessages'
+import {friendsRequestList} from './friendRequests'
+import {searchResult} from './searchUser'
 const persistConfig = {
     key:'root',
     storage,
@@ -20,7 +20,7 @@ const allReducers = combineReducers({
     selectedFriend,
     myMessages,
     friendsRequestList,
-    friendsListCheck
+    searchResult,
 })
 
 

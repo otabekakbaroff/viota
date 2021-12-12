@@ -5,7 +5,7 @@ import io from "socket.io-client"
 
 
 export const socket = io('https://viota-backend.herokuapp.com',{autoConnect: true})
-
+// export const socket = io('http://localhost:5000',{autoConnect: true})
 
 
 export const loginUser = usersInfo => dispatch => {
@@ -46,32 +46,10 @@ export const getFriendsList = () => dispatch => {
         })
 };
 
-export const friendsListSet = () => dispatch => {
-    axiosWithAuth().get(`/api/connection/${localStorage.getItem('username')}/friends-list`)
-        .then(response => {
-            dispatch({ type: 'ALL_FRIENDS', payload: response.data })
-        })
-        .catch(error => {
-            console.log(error)
-        })
-};
 
 
 export const searchUser = (user) => dispatch =>{
     socket.emit('user-search', user)
-    socket.on('user-search', data=>{
-        if(data !== 'error'){
-            dispatch({type:'GET_FRIENDS_LIST', payload: data})
-        }else{
-            axiosWithAuth().get(`/api/connection/${localStorage.getItem('username')}/friends-list`)
-            .then(response => {
-                dispatch({ type: 'GET_FRIENDS_LIST', payload: response.data })
-            })
-            .catch(error => {
-                console.log(error)
-            })
-        }
-    })
 }
 
 

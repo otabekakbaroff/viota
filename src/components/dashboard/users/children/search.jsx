@@ -2,16 +2,32 @@ import usersStyles from "../usersStyles"
 import SearchIcon from '@material-ui/icons/Search';
 import { connect } from 'react-redux';
 import { searchUser } from "../../../redux/action";
+import {socket} from "../../../redux/action"
+import {useDispatch} from 'react-redux'
+import { useEffect } from "react";
+
 
 function Search(props){
     const users_classes = usersStyles()
 
     const {searchUser} = props
 
+    const dispatch = useDispatch()
+
     const handleChange = (e) =>{
         searchUser({username:localStorage.getItem('username'), receiver:e.target.value})
     }
-
+    useEffect(()=>{
+        console.log('user-search-useEffect')
+        socket.on('user-search', data=>{
+            console.log('socket-on-search')
+            if(data !== 'error'){
+                dispatch({type:'USER_SEARCH', payload: data})
+            }else{
+                dispatch({type:'USER_SEARCH', payload: []})
+            }
+        })
+    },[dispatch])
     return(
         <div className={users_classes.search}>
             <div className={users_classes.search_textField}>
