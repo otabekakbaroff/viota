@@ -1,5 +1,5 @@
 const initialState = {
-    username:'SELECT A FRIEND TO CHAT :)',
+    username:localStorage.getItem('username'),
 }
 
 
