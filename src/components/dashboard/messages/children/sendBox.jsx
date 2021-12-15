@@ -9,19 +9,21 @@ import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import msgStyles from '../messagesStyles'
 import { connect } from 'react-redux';
-import {sendMessage} from '../../../redux/action'
+import {sendMessage,acceptRequest,socket} from '../../../redux/action'
 import axiosWithAuth from '../../../axiosWithAuth';
+import {useDispatch} from 'react-redux'
 
 function SendBox(props){
 
     const [friendListState, setFriendListState] = useState(new Set())
     const [friendRequestState, setFriendRequestState ] = useState(new Set())
 
+    const dispatch = useDispatch()
 
     const [text,setText] = useState({message:'', date:'', from:'', to:''}) 
     const msg_classes = msgStyles()
 
-    const {selectedFriend,sendMessage,friendsRequestList,friendsList} = props
+    const {selectedFriend,sendMessage,friendsRequestList,friendsList,acceptRequest} = props
     const d = new Date();
 
 
@@ -41,28 +43,24 @@ function SendBox(props){
     const Submit = (e) =>{
         e.preventDefault()
         if(friendRequestState.has(selectedFriend.username) && localStorage.getItem('username') !== selectedFriend.username){
-            axiosWithAuth().put(`/api/connection/request-reply`, {from:localStorage.getItem('username'),to:selectedFriend.username,status:2})
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })  
+            acceptRequest({from:localStorage.getItem('username'),to:selectedFriend.username,status:2})
         }else if(!friendListState.has(selectedFriend.username) && localStorage.getItem('username') !== selectedFriend.username){
+            console.log('req')
+            socket.emit('friend-request',{to:selectedFriend.username, from:localStorage.getItem('username')})
             axiosWithAuth().post(`/api/connection/send-friend-request`, {from:localStorage.getItem('username'),to:selectedFriend.username})
             .then(response => {
-                console.log(response)
+                dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username:selectedFriend.username} })
             })
             .catch(error => {
                 console.log(error)
             })
         }
-        sendMessage({
-            ...text,
-            from:localStorage.getItem('username'),
-            to: selectedFriend.username,
-            date: d.getTime() - 1639168052434
-        })
+        // sendMessage({
+        //     ...text,
+        //     from:localStorage.getItem('username'),
+        //     to: selectedFriend.username,
+        //     date: d.getTime() - 1639168052434
+        // })
     }
 
     return (
@@ -114,6 +112,7 @@ const mapStateToProps = state => {
 }
 export default connect(mapStateToProps, {
     sendMessage,
+    acceptRequest
   })(SendBox);
 
 

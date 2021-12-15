@@ -3,8 +3,8 @@ import { Typography, Fade, Modal, Box, Backdrop, Badge, IconButton, Button  } fr
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import usersStyles from "../../usersStyles"
 import { connect } from 'react-redux';
-import {friendsRequest, acceptRequest,declineRequest} from "../../../../redux/action"
-
+import {friendsRequest, acceptRequest,declineRequest,socket} from "../../../../redux/action"
+import {useDispatch} from 'react-redux'
 
 const style = {
   position: 'absolute',
@@ -27,7 +27,13 @@ function Notifications(props) {
 
   const {acceptRequest, declineRequest, friendsRequest, friendsRequestList} = props
 
+  const dispatch = useDispatch()
+
   useState(()=>{
+    socket.on('friend-request',data =>{
+      console.log('friend-request', data)
+      dispatch({ type: 'ADD_REQUEST', payload: {from: data.from} })
+    })
     friendsRequest()
   },[friendsRequest])
   return (
@@ -64,12 +70,12 @@ function Notifications(props) {
                          <h3>{item.from}</h3>
                      </div>
                      <div className={users_classes.profile_modal_notifications_buttons}>
-                         <Button onClick={()=>{acceptRequest({from:localStorage.getItem('username'), to:item.from, id:item.id, status:2})}}  
+                         <Button onClick={()=>{acceptRequest({from:localStorage.getItem('username'), to:item.from, status:2})}}  
                          className={users_classes.profile_modal_notifications_accept_button} 
                          variant="contained"
                          >Accept</Button>
                          <Button 
-                         onClick={()=>{declineRequest({from:localStorage.getItem('username'), to:item.from, id:item.id, status:1})}}
+                         onClick={()=>{declineRequest({from:localStorage.getItem('username'), to:item.from, status:1})}}
                          className={users_classes.profile_modal_notifications_decline_button} 
                          variant="outlined"
                          >Decline</Button>

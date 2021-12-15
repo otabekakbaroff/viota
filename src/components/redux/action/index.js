@@ -87,6 +87,7 @@ export const friendsRequest = () => dispatch => {
 
 
 export const acceptRequest = requestInfo => dispatch=>{
+    console.log(requestInfo)
     axiosWithAuth().put(`/api/connection/request-reply`, requestInfo)
         .then(response => {
             console.log(response)
@@ -95,7 +96,6 @@ export const acceptRequest = requestInfo => dispatch=>{
             console.log(error)
     })  
     dispatch({ type: 'UPDATE_FRIENDS_LIST', payload: {username: requestInfo.to} })
-    dispatch({ type: 'UPDATE_FRIEND_CHECK',  payload: {username: requestInfo.to}})
     dispatch({ type: 'UPDATE_REQUEST_LIST', payload: {username: requestInfo.to} })
 }
 
@@ -132,8 +132,7 @@ export const sendRequest = user => dispatch => {
     })
     .catch(error => {
         console.log(error)
-    })
-    dispatch({ type: 'UPDATE_FRIEND_CHECK', payload: user })  
+    }) 
 }
 
 
