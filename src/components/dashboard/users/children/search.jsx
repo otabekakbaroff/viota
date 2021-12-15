@@ -18,9 +18,7 @@ function Search(props){
         searchUser({username:localStorage.getItem('username'), receiver:e.target.value})
     }
     useEffect(()=>{
-        console.log('user-search-useEffect')
         socket.on('user-search', data=>{
-            console.log('socket-on-search')
             if(data !== 'error'){
                 dispatch({type:'USER_SEARCH', payload: data})
             }else{
