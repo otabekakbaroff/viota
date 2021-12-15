@@ -55,12 +55,12 @@ function SendBox(props){
                 console.log(error)
             })
         }
-        // sendMessage({
-        //     ...text,
-        //     from:localStorage.getItem('username'),
-        //     to: selectedFriend.username,
-        //     date: d.getTime() - 1639168052434
-        // })
+        sendMessage({
+            ...text,
+            from:localStorage.getItem('username'),
+            to: selectedFriend.username,
+            date: d.getTime() - 1639168052434
+        })
     }
 
     return (
