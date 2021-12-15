@@ -29,8 +29,9 @@ function ChatBox(props){
                <div 
                style={{display:(
                    (localStorage.getItem('username') === item.to && selectedFriend.username === item.from) ||
-               (localStorage.getItem('username') === item.from && selectedFriend.username === item.to) &&
-               (localStorage.getItem('username') !== selectedFriend.username) 
+               (localStorage.getItem('username') === item.from && selectedFriend.username === item.to 
+               && 
+               localStorage.getItem('username') !== selectedFriend.username) 
                ) ? 'block': 'none' }}
                className={
                item.from === selectedFriend.username ? msg_classes.chatBox_received:msg_classes.chatBox_sent} 
