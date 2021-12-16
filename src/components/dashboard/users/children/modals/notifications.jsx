@@ -39,8 +39,12 @@ function Notifications(props) {
   return (
     <div>
        <IconButton onClick={handleOpen}>
-            <Badge badgeContent={999}>
-                    <NotificationsIcon  />
+            <Badge className={friendsRequestList.length !==0 ? 
+              users_classes.profile_modal_notifications_badge
+              : 
+              users_classes.profile_modal_notifications_badge_empty}  
+              badgeContent={friendsRequestList.length}>
+                  <NotificationsIcon  />
             </Badge>
         </IconButton>
       <Modal

@@ -10,6 +10,8 @@ import Notifications from "./modals/notifications";
 function Profile(){
     const users_classes = usersStyles()
 
+
+
     return(
            <div className={users_classes.profile}>
                 <div className={users_classes.profile_leftContainer}>
@@ -20,7 +22,7 @@ function Profile(){
                 <div className={users_classes.profile_actions}>
                     <Notifications/>
                     <IconButton >
-                        <Badge badgeContent={'Hello'}>
+                        <Badge >
                             <GroupAddIcon />
                         </Badge>
                     </IconButton>

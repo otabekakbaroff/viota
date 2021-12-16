@@ -97,8 +97,12 @@ const usersStyles = makeStyles ((theme) => ({
     profile_modal_notifications_decline_button:{
         backgroundColor:'#fd2b2b',
     },
+    profile_modal_notifications_badge:{
+        '& .MuiBadge-badge':{
+            backgroundColor:'rgb(0 104 173)'
+        },
+    },
 
-   
     // Search
 
     search:{
