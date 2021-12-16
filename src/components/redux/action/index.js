@@ -87,7 +87,6 @@ export const friendsRequest = () => dispatch => {
 
 
 export const acceptRequest = requestInfo => dispatch=>{
-    console.log(requestInfo)
     axiosWithAuth().put(`/api/connection/request-reply`, requestInfo)
         .then(response => {
             console.log(response)

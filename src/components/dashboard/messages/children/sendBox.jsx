@@ -42,10 +42,10 @@ function SendBox(props){
 
     const Submit = (e) =>{
         e.preventDefault()
+        document.getElementById('text').value=''
         if(friendRequestState.has(selectedFriend.username) && localStorage.getItem('username') !== selectedFriend.username){
             acceptRequest({from:localStorage.getItem('username'),to:selectedFriend.username,status:2})
         }else if(!friendListState.has(selectedFriend.username) && localStorage.getItem('username') !== selectedFriend.username){
-            console.log('req')
             socket.emit('friend-request',{to:selectedFriend.username, from:localStorage.getItem('username')})
             axiosWithAuth().post(`/api/connection/send-friend-request`, {from:localStorage.getItem('username'),to:selectedFriend.username})
             .then(response => {
@@ -71,7 +71,7 @@ function SendBox(props){
                 </IconButton>
 
                 <TextField 
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     fullWidth  
                     id="text"  
                     placeholder="Type here..." 

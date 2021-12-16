@@ -31,7 +31,6 @@ function Notifications(props) {
 
   useState(()=>{
     socket.on('friend-request',data =>{
-      console.log('friend-request', data)
       dispatch({ type: 'ADD_REQUEST', payload: {from: data.from} })
     })
     friendsRequest()
