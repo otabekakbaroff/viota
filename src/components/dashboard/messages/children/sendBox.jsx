@@ -59,7 +59,7 @@ function SendBox(props){
             ...text,
             from:localStorage.getItem('username'),
             to: selectedFriend.username,
-            date: d.getTime() - 1639168052434
+            date: Number(`${d.getFullYear()}${d.getMonth()}${d.getDay()}${d.getHours()}${d.getMinutes()}`)
         })
     }
 

@@ -62,8 +62,10 @@ export const selectFriend = friend => dispatch=>{
 
 export const getMyMessages = usersInfo => dispatch => {
     if(usersInfo.from && usersInfo.to){
+        console.log(usersInfo.from, usersInfo.to)
         axiosWithAuth().post(`/api/messages/my-messages`, {from:usersInfo.from, to:usersInfo.to})
         .then(response => {
+            console.log(response)
             dispatch({ type: 'GET_MY_MESSAGES', payload: response.data })
         })
         .catch(error => {
