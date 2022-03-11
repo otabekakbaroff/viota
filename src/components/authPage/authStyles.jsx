@@ -12,25 +12,26 @@ const authStyles = makeStyles ((theme) => ({
             color:'white'
     },     
     validation:{
+        // Small phones
         [theme.breakpoints.up('xs')]: {
             height:'500px',
-            width:'350px'
+            width: '90%',
+            // backgroundColor:'red'
         },
+        //mid size phones, like iphone 12 PRO MAX
         [theme.breakpoints.up('sm')]: {
             height:'550px',
-            width:'400px'
         },
+        //ipads
         [theme.breakpoints.up('md')]: {
-            height:'600px',
-            width:'450px'
+            height:'700px',
+            width:'500px',
         },
-        [theme.breakpoints.up('lg')]: {
-            height:'650px',
-            width:'500px'
-        },
+        //desktops
         [theme.breakpoints.up('xl')]: {
-            height:'675px',
-            width:'525px'
+            height:'800px',
+            width:'570px',
+            backgroundColor:'blue'
         },
         backgroundColor:theme.palette.primary.main,
         boxShadow:`0px 0px 50px 2px black`,
@@ -52,8 +53,8 @@ const authStyles = makeStyles ((theme) => ({
             width:'150px'
         },
         [theme.breakpoints.up('md')]: {
-            height:'175px',
-            width:'175px'
+            height:'200px',
+            width:'200px'
         },
         [theme.breakpoints.up('lg')]: {
             height:'200px',
@@ -78,6 +79,9 @@ const authStyles = makeStyles ((theme) => ({
     },
 
     item:{
+        [theme.breakpoints.up('xs')]: {
+            width:'75%'
+        },
         [theme.breakpoints.down('xs')]: {
             marginBottom:'10px'
         },
@@ -94,6 +98,9 @@ const authStyles = makeStyles ((theme) => ({
     },
 
     button:{
+        [theme.breakpoints.up('xs')]: {
+            width:'75%'
+        },
         '&:hover':{
             backgroundColor:theme.palette.secondary.main
         },
