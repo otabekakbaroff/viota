@@ -3,14 +3,15 @@ import { makeStyles } from "@material-ui/core"
 
 const msgStyles = makeStyles ((theme) => ({
     main:{
-        backgroundColor:theme.palette.primary.dark,
-        display:'flex',
-        flexDirection:'column',
         [theme.breakpoints.up('xs')]: {
+            backgroundColor:theme.palette.primary.dark,
             display: 'none',
-            flexGrow:1
+            flexDirection:'column',
+            width:'100%',
+            flexGrow:1,
         },
         [theme.breakpoints.up('md')]: {
+            display:'flex',
             width:'65%',
         }
     },
@@ -51,6 +52,14 @@ const msgStyles = makeStyles ((theme) => ({
     },
     chatBox_sent:{
         [theme.breakpoints.up('xs')]: {
+            backgroundColor:'#0f59ff',
+            borderRadius:'25px',
+            alignSelf:'flex-end',
+            fontSize:'17px',
+            color:'white',
+            padding:'5px 25px',
+            wordWrap: 'break-word',
+            margin:'7.5px 10px 7.5px 0px',
             maxWidth:'200px',
         },
         [theme.breakpoints.up('sm')]: {
@@ -65,15 +74,6 @@ const msgStyles = makeStyles ((theme) => ({
         [theme.breakpoints.up('xl')]: {
             maxWidth:'600px',
         },
-        backgroundColor:'#0f59ff',
-        borderRadius:'25px',
-        alignSelf:'flex-end',
-        fontSize:'17px',
-        color:'white',
-        padding:'5px 25px',
-        wordWrap: 'break-word',
-        margin:'7.5px 10px 7.5px 0px'
-
     },
     chatBox_received:{
         [theme.breakpoints.up('xs')]: {
@@ -120,8 +120,13 @@ const msgStyles = makeStyles ((theme) => ({
         }
     },
     sendBox_input_icons:{
-        color:'#5d6164',
-        display:'none'
+        [theme.breakpoints.up('xs')]: {
+            color:'#5d6164',
+            display:'none'
+        },
+        [theme.breakpoints.up('md')]: {
+          display:'flex'  
+        }
     }
 
 

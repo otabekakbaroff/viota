@@ -2,12 +2,16 @@ import usersStyles from "../usersStyles"
 import msgStyles from '../../messages/messagesStyles'
 import { connect } from 'react-redux';
 import {  getFriendsList, selectFriend  } from "../../../redux/action";
+import { useMediaQuery } from "@material-ui/core";
 import { useEffect } from "react";
 
 
 
 function Contacts(props){
    const {friendsList, getFriendsList, selectFriend, searchResult} = props
+
+   const matches = useMediaQuery('(min-width:600px)');
+
 
     useEffect(()=>{
         getFriendsList()
@@ -18,8 +22,10 @@ function Contacts(props){
 
 
     function handleOpen(){
-        document.querySelector(`.${users_classes.main}`).style.display = 'none'
-        document.querySelector(`.${msg_classes.main}`).style.display = 'flex'
+        if(!matches){
+            document.querySelector(`.${users_classes.main}`).style.display = 'none'
+            document.querySelector(`.${msg_classes.main}`).style.display = 'flex'
+        }
     }
 
     return(

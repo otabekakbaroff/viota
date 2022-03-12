@@ -13,7 +13,10 @@ const usersStyles = makeStyles ((theme) => ({
             overflow:'hidden'
         },
         [theme.breakpoints.up('md')]: {
-            width:'500px',
+            width:'250px',
+        },
+        [theme.breakpoints.up('lg')]: {
+            width:'400px',
         },
     },
 
@@ -42,9 +45,8 @@ const usersStyles = makeStyles ((theme) => ({
         [theme.breakpoints.up('xs')]: {
             height:'100px',
             width:'100px',
-            padding:'5px',
             margin:'5px',
-            padding:0
+            padding: 0
         },
     },
     profile_username:{
@@ -62,7 +64,10 @@ const usersStyles = makeStyles ((theme) => ({
             '& .MuiSvgIcon-root':{
                 fontSize: '30px'
             },
-        }
+        },
+        [theme.breakpoints.up('md')]: {
+            flexWrap:'wrap'
+        },
     },
     profile_modal_notifications_item:{
         [theme.breakpoints.up('xs')]: {
@@ -144,26 +149,36 @@ const usersStyles = makeStyles ((theme) => ({
     },
 
     search_input:{
-        outline:'none',
-        '&::placeholder':{
-            color:'rgb(150,150,150)',
+        [theme.breakpoints.up('xs')]: {
+            outline:'none',
+            '&::placeholder':{
+                color:'rgb(150,150,150)',
+                fontSize:'24px',
+                fontWeight:'50px',
+                paddingLeft:'5px'
+            },
+            backgroundColor: theme.palette.primary.light,
+            borderRadius:'10px',
+            height:'70px',
+            width:'97%',
+            color:'white',
             fontSize:'24px',
-            fontWeight:'50px',
-            paddingLeft:'5px'
+            paddingLeft:'5px',
+            display:'flex',
+            alignItems:'center',
+            '&:hover':{
+                backgroundColor:'#3a3f42'
+            },
+            margin: '15px 0px 15px 0px',
         },
-        backgroundColor: theme.palette.primary.light,
-        borderRadius:'10px',
-        height:'70px',
-        width:'97%',
-        color:'white',
-        fontSize:'24px',
-        paddingLeft:'5px',
-        display:'flex',
-        alignItems:'center',
-        '&:hover':{
-            backgroundColor:'#3a3f42'
-        },
-        margin: '15px 0px 15px 0px',
+        [theme.breakpoints.up('md')]: {
+            '&::placeholder':{
+                color:'rgb(150,150,150)',
+                fontSize:'20px',
+                fontWeight:'50px',
+                paddingLeft:'5px'
+            },
+        }
     },
     search_icon_desktop:{
         [theme.breakpoints.up('xs')]: {
@@ -172,6 +187,10 @@ const usersStyles = makeStyles ((theme) => ({
             color:'white',
             width: '35px',
             height:'35px',
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '30px',
+            height:'30px',
         }
     },
     search_icon_mobile:{
