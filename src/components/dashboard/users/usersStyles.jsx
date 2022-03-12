@@ -18,6 +18,9 @@ const usersStyles = makeStyles ((theme) => ({
         [theme.breakpoints.up('lg')]: {
             width:'400px',
         },
+        [theme.breakpoints.up('xl')]: {
+            width:'500px',
+        },
     },
 
     // Profile
