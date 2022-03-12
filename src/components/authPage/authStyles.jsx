@@ -29,9 +29,8 @@ const authStyles = makeStyles ((theme) => ({
         },
         //desktops
         [theme.breakpoints.up('xl')]: {
-            height:'800px',
-            width:'570px',
-            backgroundColor:'blue'
+            height:'750px',
+            width:'550px',
         },
         backgroundColor:theme.palette.primary.main,
         boxShadow:`0px 0px 50px 2px black`,

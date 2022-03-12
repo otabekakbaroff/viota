@@ -28,11 +28,8 @@ function Search(props){
     },[dispatch])
     return(
         <div className={users_classes.search}>
-            <div className={users_classes.search_textField}>
                 <input onChange={handleChange} placeholder="Search for users..." className={users_classes.search_input}/>
-                <i><SearchIcon id="search_icon_desktop" className={users_classes.search_icon_desktop}  /></i>
-            </div>
-            <SearchIcon className={users_classes.search_icon_mobile} id="search_icon_mobile"/>
+                <SearchIcon id="search_icon_desktop" className={users_classes.search_icon_desktop}  />
         </div>
     )
 }

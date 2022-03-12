@@ -21,13 +21,13 @@ function Profile(){
                 </div>
                 <div className={users_classes.profile_actions}>
                     <Notifications/>
-                    <IconButton >
+                    <IconButton  >
                         <Badge >
                             <GroupAddIcon />
                         </Badge>
                     </IconButton>
                     <IconButton >
-                        <VideoCallIcon/>
+                        <VideoCallIcon />
                     </IconButton>
                     <IconButton >
                         <EditIcon />

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Typography, Fade, Modal, Box, Backdrop, Badge, IconButton, Button  } from '@material-ui/core';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import { Close } from '@material-ui/icons';
 import usersStyles from "../../usersStyles"
 import { connect } from 'react-redux';
 import {friendsRequest, acceptRequest,declineRequest,socket} from "../../../../redux/action"
 import {useDispatch} from 'react-redux'
+
 
 const style = {
   position: 'absolute',
@@ -12,7 +14,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   height: '85%',
-  width: '35%',
+  width: '75%',
   bgcolor: '#141414',
   border: '2px solid #1c1c1c',
   boxShadow: 24,
@@ -37,13 +39,13 @@ function Notifications(props) {
   },[friendsRequest])
   return (
     <div>
-       <IconButton onClick={handleOpen}>
-            <Badge className={friendsRequestList.length !==0 ? 
+       <IconButton onClick={handleOpen} >
+            <Badge className={friendsRequestList.length !== 0 ? 
               users_classes.profile_modal_notifications_badge
               : 
               users_classes.profile_modal_notifications_badge_empty}  
               badgeContent={friendsRequestList.length}>
-                  <NotificationsIcon  />
+                  <NotificationsIcon />
             </Badge>
         </IconButton>
       <Modal
@@ -58,19 +60,24 @@ function Notifications(props) {
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box sx={style} >
+            <IconButton onClick={handleClose}  className={users_classes.profile_modal_notifications_closeButton}>
+              <Badge>
+                  <Close />
+              </Badge>
+          </IconButton>
             <Typography id="transition-modal-title" variant="h6" component="h2">
               Friend requests
             </Typography>
             <Typography id="transition-modal-description" >
               add friends
             </Typography>
-            <div  className={users_classes.profile_modal_notifications}>               
+            <div  className={users_classes.profile_modal_notifications}>              
                 {friendsRequestList.map(item=>(
                      <div className={users_classes.profile_modal_notifications_userBox} key={Math.random()*999999999}>
                      <div className={users_classes.profile_modal_notifications_profile}>
                          <img className={users_classes.profile_modal_notifications_img} src={`https://avatars.dicebear.com/api/bottts/${item.from}.svg`} alt="John robot emoji"/>
-                         <h3>{item.from}</h3>
+                         <h4>{item.from}</h4>
                      </div>
                      <div className={users_classes.profile_modal_notifications_buttons}>
                          <Button onClick={()=>{acceptRequest({from:localStorage.getItem('username'), to:item.from, status:2})}}  

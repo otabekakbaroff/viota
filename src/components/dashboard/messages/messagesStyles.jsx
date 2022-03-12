@@ -7,6 +7,7 @@ const msgStyles = makeStyles ((theme) => ({
         display:'flex',
         flexDirection:'column',
         [theme.breakpoints.up('xs')]: {
+            display: 'none',
             flexGrow:1
         },
         [theme.breakpoints.up('md')]: {
@@ -16,11 +17,11 @@ const msgStyles = makeStyles ((theme) => ({
     header:{
         position:'sticky',
         top:0,
-        display:'flex',
+        display:'inline-flex',
         height: '150px',
         borderBottom:`solid 1.5px ${theme.palette.primary.light}`,
         backgroundColor:'rgb(34 34 40)',
-        justifyContent:'space-between',
+        // justifyContent:'space-evenly',
         alignItems:'center'
     },
     header_avatar:{
@@ -31,6 +32,11 @@ const msgStyles = makeStyles ((theme) => ({
     header_avatar_img:{
         height:'75px',
         width:'75px'
+    },
+    header_icons:{
+        display:'flex',
+        width:'100%',
+        justifyContent:'flex-end'
     },
 
 
@@ -61,7 +67,7 @@ const msgStyles = makeStyles ((theme) => ({
         },
         backgroundColor:'#0f59ff',
         borderRadius:'25px',
-        alignSelf:'end',
+        alignSelf:'flex-end',
         fontSize:'17px',
         color:'white',
         padding:'5px 25px',
@@ -90,16 +96,10 @@ const msgStyles = makeStyles ((theme) => ({
         fontSize:'17px',  
         color:'white',
         padding:'5px 25px',
-        alignSelf:'start',
+        alignSelf:'flex-start',
         wordWrap: 'break-word',
         margin:'7.5px 0px 7.5px 10px'
     },
-
-
-
-
-
-
 
     sendBox:{
         position:'sticky',
@@ -120,7 +120,8 @@ const msgStyles = makeStyles ((theme) => ({
         }
     },
     sendBox_input_icons:{
-        color:'#5d6164'
+        color:'#5d6164',
+        display:'none'
     }
 
 

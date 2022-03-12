@@ -4,91 +4,115 @@ import { makeStyles } from "@material-ui/core"
 const usersStyles = makeStyles ((theme) => ({
     main:{
         [theme.breakpoints.up('xs')]: {
-            width:'100px',
+            display:'flex',
+            flexDirection:'column',
+            backgroundColor:theme.palette.primary.main,
+            borderRight:`solid ${theme.palette.primary.dark} 1.5px`,
+            height:'100vh',
+            width:'100%',
+            overflow:'hidden'
         },
         [theme.breakpoints.up('md')]: {
             width:'500px',
         },
-        backgroundColor:theme.palette.primary.main,
-        borderRight:`solid ${theme.palette.primary.dark} 1.5px`,
-        display:'flex',
-        flexDirection:'column'
     },
 
     // Profile
 
     profile:{
-        [theme.breakpoints.down('sm')]: {
-            height:'350px'
+        [theme.breakpoints.up('xs')]: {
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'space-between',
+            height: '165px',
+            padding: '5px',
         },
-        height:'115px',
-        display:'flex',
-        alignItems:'center',
-        justifyContent:'space-between'
     },
     profile_leftContainer:{
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.up('xs')]: {
             display:'flex',
+            alignItems:'flex-start',
+            justifyContent:'flex-start',
             flexDirection:'column',
             margin:0,
-            width:'100%',
+            width:'100px',
         },
-        display:'flex',
-        alignItems:'center',
-        width:'60%',
-        justifyContent: 'flex-start',
-        marginLeft:'15px'
     },
     profile_img:{
-        [theme.breakpoints.down('sm')]: {
-            margin:0,
+        [theme.breakpoints.up('xs')]: {
+            height:'100px',
+            width:'100px',
+            padding:'5px',
+            margin:'5px',
             padding:0
         },
-        height:'100px',
-        width:'100px',
-        padding:'5px',
-        margin:'5px'
     },
     profile_username:{
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.up('xs')]: {
             fontSize:'18px',
-            textAlign:'center'
+            textAlign:'center',
+            width:'100%'
         },
-        textAlign:'left'
     },
     profile_actions:{
-        [theme.breakpoints.down('sm')]: {
-            display:'none',
-        },
-        width:'40%',
-        display:'flex',
-        justifyContent: 'flex-end'
+        [theme.breakpoints.up('xs')]: {
+            width:'100%',
+            display:'flex',
+            justifyContent: 'flex-end',
+            '& .MuiSvgIcon-root':{
+                fontSize: '30px'
+            },
+        }
     },
-    profile_modal_notifications:{
-        display:'flex',
-        flexDirection:'column',
-        alignItems:'center',
-        overflow:"scroll",
-        height:'90%',
-        // color:'red',
-        margin:'15px 0px'
+    profile_modal_notifications_item:{
+        [theme.breakpoints.up('xs')]: {
+            display:'flex',
+            flexDirection:'column',
+            alignItems:'center',
+            overflow:"scroll",
+            height:'90%',
+            width:'300px',
+            margin:'15px 0px',
+            backgroundColor:'red'
+        }
+    },
+    profile_modal_notifications_closeButton:{
+        [theme.breakpoints.up('xs')]: {
+            float:'right'
+        }
     },
     profile_modal_notifications_userBox:{
-        display:'flex',
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-between',
-        width:'100%',
-        margin:'15px 0px 15px 0px'
+        [theme.breakpoints.up('xs')]: {
+            display:'flex',
+            flexDirection:'column',
+            backgroundColor:'#3737376e',
+            width:'95%',
+            height:'150px',
+            margin:'15px 0px 15px 0px',
+            padding:'15px',
+            borderRadius:'15px'
+        }
     },
     profile_modal_notifications_profile:{
-        display:'flex',
-        alignItems:'center',
-        justifyContent:'space-between'
+        [theme.breakpoints.up('xs')]: {
+            display:'flex',
+            alignItems:'center',
+        }
     },
     profile_modal_notifications_img:{
-        width: '75px',
-        height:'75px'
+        [theme.breakpoints.up('xs')]: {
+            width: '75px',
+            height:'75px',
+            marginRight:'15px'
+        }
+    },
+    profile_modal_notifications_buttons:{
+        [theme.breakpoints.up('xs')]: {
+            display:'flex',
+            justifyContent:'flex-end',
+            alignItems:'center',
+            height:'50%',
+        }
     },
     profile_modal_notifications_accept_button:{
         backgroundColor:'#0068ad',
@@ -106,39 +130,17 @@ const usersStyles = makeStyles ((theme) => ({
     // Search
 
     search:{
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.up('xs')]: {
             display:'flex',
-            justifyContent:'center',
-            flexDirection:'column',
+            justifyContent:'flex-end',
+            position:'relative',
+            flexDirection:'row',
             backgroundColor:theme.palette.primary.main,
             borderTop:`solid 1px ${theme.palette.primary.light}`,
             borderBottom :`solid 1px ${theme.palette.primary.light}`,
-            alignItems:'center'
-        },
-        display:'flex',
-        backgroundColor:theme.palette.primary.main,
-        justifyContent:'center',
-        borderTop:`solid 1px ${theme.palette.primary.light}`,
-        borderBottom :`solid 1px ${theme.palette.primary.light}`,
-        alignItems:'center',
-        padding:'15px 5px'
-    },
-
-    search_textField:{
-        [theme.breakpoints.up('xs')]: {
-            display:'none'
-        },
-        [theme.breakpoints.up('md')]: {
-            display:'flex',
-        },
-        backgroundColor: theme.palette.primary.light,
-        color: 'white',
-        height:'75px',
-        width:'97%',
-        borderRadius:'10px',
-        borderTop:`solid 1px ${theme.palette.primary.light}`,
-        borderBottom :`solid 1px ${theme.palette.primary.light}`,
-        alignItems:'center'
+            alignItems:'center',
+            padding:'15px 5px'
+        }
     },
 
     search_input:{
@@ -164,10 +166,13 @@ const usersStyles = makeStyles ((theme) => ({
         margin: '15px 0px 15px 0px',
     },
     search_icon_desktop:{
-        padding:'5px',
-        color:'white',
-        width: '35px',
-        height:'35px',
+        [theme.breakpoints.up('xs')]: {
+            position:'absolute',
+            padding:'5px',
+            color:'white',
+            width: '35px',
+            height:'35px',
+        }
     },
     search_icon_mobile:{
         [theme.breakpoints.up('xs')]: {
@@ -216,12 +221,9 @@ const usersStyles = makeStyles ((theme) => ({
     },
     
     contacts_profile_username:{
-        [theme.breakpoints.up('xs')]: {
-            display:'none'
-        },
-        [theme.breakpoints.up('md')]: {
-            display:'block'
-        }
+        // [theme.breakpoints.up('xs')]: {
+        //     display:'none'
+        // },
     },
     contacts_add_friend_button:{
         height: '50px',
