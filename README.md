@@ -10,22 +10,26 @@
 # Getting Started
 
 On terminal run 
-
-- git clone https://github.com/otabekakbaroff/viota.git
-- npm install
-- npm start
-
+```
+git clone https://github.com/otabekakbaroff/viota.git
+```
+```
+npm install
+```
+```
+npm start
+```
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
 # Libraries
-```
+
 - State management with Redux
 - websocket set up with socket.io
 - REST API calls with Axios
 - Material UI 
 
-```
+
 
 
 
