@@ -24,7 +24,7 @@ Open http://localhost:3000 to view it in the browser.
 
 # Frameworks - Libraries
 
-### Front end
+## Front end
 
 - React
 - State management with Redux
@@ -32,9 +32,9 @@ Open http://localhost:3000 to view it in the browser.
 - REST API calls with Axios
 - Material UI
 
-### Backend
+## Backend
 
-## set up and how to use documentation for backend available [here](https://github.com/otabekakbaroff/viota_backend)
+### set up and how to use documentation for backend available [here](https://github.com/otabekakbaroff/viota_backend)
 
 - bcrypt
 - express
