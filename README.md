@@ -22,12 +22,29 @@ npm start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
-# Libraries
+# Frameworks - Libraries
 
+### Front end
+
+- React
 - State management with Redux
 - websocket set up with socket.io
 - REST API calls with Axios
-- Material UI 
+- Material UI
+
+### Backend
+
+- bcrypt
+- express
+- jsonwebtoken
+- knex
+- nodemon
+- postgresql
+- socket.io
+- sqlite3
+- helmet
+- cors
+- dotenv
 
 
 
