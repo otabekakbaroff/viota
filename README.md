@@ -34,7 +34,7 @@ Open http://localhost:3000 to view it in the browser.
 
 ## Backend
 
-### set up and how to use documentation for backend available [here](https://github.com/otabekakbaroff/viota_backend)
+### Set up and how to use documentation for backend available [here](https://github.com/otabekakbaroff/viota_backend)
 
 - bcrypt
 - express
