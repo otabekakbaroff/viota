@@ -79,7 +79,8 @@ const authStyles = makeStyles ((theme) => ({
 
     item:{
         [theme.breakpoints.up('xs')]: {
-            width:'75%'
+            width:'75%',
+            fontSize:'16px'
         },
         [theme.breakpoints.down('xs')]: {
             marginBottom:'10px'
