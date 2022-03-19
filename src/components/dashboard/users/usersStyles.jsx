@@ -220,6 +220,7 @@ const usersStyles = makeStyles ((theme) => ({
 
     contacts:{
         flexGrow:'1',
+        zIndex: '100',
         overflow:'scroll'
     },
 

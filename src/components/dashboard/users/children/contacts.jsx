@@ -8,6 +8,7 @@ import { useEffect } from "react";
 
 
 function Contacts(props){
+    
    const {friendsList, getFriendsList, selectFriend, searchResult} = props
 
    const matches = useMediaQuery('(min-width:600px)');

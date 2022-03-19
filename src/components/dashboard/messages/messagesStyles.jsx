@@ -45,6 +45,7 @@ const msgStyles = makeStyles ((theme) => ({
     chatBox:{
         flexGrow:'1',
         overflow:'scroll',
+        zIndex: '100',
         borderBottom:`solid 2px ${theme.palette.primary.light}`,
         display:'flex',
         flexDirection:'column',
